@@ -1,0 +1,227 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'SegoeUI';
+    src: url(fonts/segoeuil.ttf);
+    font-style: normal;
+    font-weight: 100;
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    list-style: none;
+}
+
+html, body {
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
+p.name {
+    font-family: 'SegoeUI', sans-serif;
+    color: white;
+    font-size: 125px;
+    text-shadow: 2px 2px 6px #000000;
+}
+
+.container {
+    height: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+.background {
+    background-image: url("background.png");
+    min-height: 100%;
+	overflow-x: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-user-drag: none;
+    user-select: none;
+    padding-top: 250px;
+}
+
+img.icon {
+    -webkit-user-drag: none;
+    height: 180px;
+    width: auto;
+    border-radius: 1000px;
+    box-shadow: 2px 2px 6px rgb(0, 0, 0);
+}
+
+.image {
+    margin-right: 35px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+p.abtext{
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    opacity: 60%;
+}
+
+div.bottom {
+    background-color: #000000;
+    padding: 50px;
+}
+
+.btn {
+    padding: 20px;
+    width: 100%;
+    color: #ffffff;
+    background-color: #4eb224;
+    box-shadow: 0px 0px 8px#4eb224;
+    border-radius: 10px;
+    border-style: none;
+    transition: 0.2s all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnp {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: larger;
+}
+
+.btn:hover {
+    background-color: #41911f;
+    box-shadow: 0px 0px 8px#41911f;
+    cursor: pointer;
+}
+
+.btn:active {
+    background-color: #327018;
+    box-shadow: 0px 0px 6px#327018;
+}
+
+.button {
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.instg {
+    padding-bottom: 130px;
+}
+
+.sub1 {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.sub11 {
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 50px;
+    text-shadow: 0px 0px 10px #ffffff7a;
+}
+
+.embed {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding-top: 30px;
+}
+
+.embedd {
+    border-radius: 20px;
+    border-style: none;
+    box-shadow: 0px 0px 10px#ffffff;
+}
+
+.a:hover {
+    cursor: pointer;
+}
+
+
+
+/*       =D                 */
+
+
+
+
+
+h1 {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 2.5rem;
+    color: #ffffff;
+  }
+  
+  .accordion {
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem auto;
+  }
+
+  .accordion-item {
+    background-color: #202020;
+    color: #fafafa;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.25);
+  }
+  .accordion-item-header {
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    min-height: 3.5rem;
+    line-height: 1.25rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .accordion-item-header::after {
+    content: "\002B";
+    font-size: 2rem;
+    position: absolute;
+    right: 1rem;
+  }
+  .accordion-item-header.active::after {
+    content: "\2212";
+  }
+  .accordion-item-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  .accordion-item-body-content {
+    padding: 1rem;
+    line-height: 1.5rem;
+    border-top: 1px solid;
+    border-image: linear-gradient(to right, transparent, #616f7c, transparent) 1;
+  }
+  
+  @media(max-width:767px) {
+    html {
+      font-size: 14px;
+    }
+  }
