@@ -27,6 +27,13 @@ p.name {
     text-shadow: 2px 2px 6px #000000;
 }
 
+p.not-supported {
+    font-family: 'SegoeUI', sans-serif;
+    color: white;
+    font-size: 50px;
+    text-shadow: 2px 2px 6px #000000;
+}
+
 .container {
     height: 100%;
     min-height: 100%;
