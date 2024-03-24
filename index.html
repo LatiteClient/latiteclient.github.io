@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords"
+        content=" Latite Client, Latite, Latite Client Download, Latite Client, Motion Blur Minecraft Bedrock">
+    <meta name="author" content="Latite Client">
+    <meta property="twitter:title" content="Latite Client">
+    <meta property="og:title" content="Latite Client">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#4D57B2">
+    <meta property="og:description" content="Latite Client is a legitimate DLL client For Minecraft Windows 10/11 Edition. It features a Clean UI and 30+ customizable mods, like Motion Blur, Keystrokes, Zoom, and more! Add community made plugins or make your own using our API based on JavaScript/TypeScript!">
+    <meta name="description" content="Latite Client. A Legitimate Client For Minecraft Windows 10/11 Edition. It features a clean UI, and 30+ mods, like Motion Blur, Keystrokes, Zoom, and more!">
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/1059373077005336656/1059373077835812944/latite-1.png?ex=65c08e8f&is=65ae198f&hm=2071a81318b56e3cf2958b8ca44ddade4599ca10117658f2192e79db8e2af404&">
+    <title>Latite Client</title>
+    <link rel="stylesheet" type="text/css" href="./sources/style.css">
+    <link rel="icon" type="image/png" href="sources/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.css"
+        integrity="sha512-FA9cIbtlP61W0PRtX36P6CGRy0vZs0C2Uw26Q1cMmj3xwhftftymr0sj8/YeezDnRwL9wtWw8ZwtCiTDXlXGjQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.css"
+        integrity="sha512-E+53kXnJyuZFSz75xSmTfCpUNj3gp9Bd80TeQQMTPJTVWDRHPOpEYczGwWtsZXvaiz27cqvhdH8U+g/NMYua3A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.css"
+        integrity="sha512-M9yHeAbo9J8KSZVvOi5PEo4WrL6LWxbS+cvh6faIEPPqHQXhxilgCSJ/L2tTqRf73GmI4+tNy8OWSsQuwXc4fw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.css"
+        integrity="sha512-CaTMQoJ49k4vw9XO0VpTBpmMz8XpCWP5JhGmBvuBqCOaOHWENWO1CrVl09u4yp8yBVSID6smD4+gpzDJVQOPwQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.0/css/font-awesome.css"
+        integrity="sha512-vTF66+NUFBh1RYzB09CzDYgbCeXhYpaBrydVaSAeYMjlRZ+unsPguBSioDFfMd8n2jYLijqhpJOAhEa0vdcUew=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.css"
+        integrity="sha512-c0+vSv9tnGS4fzwTIBFPcdCZ0QwP+aTePvZeAJkYpbj67KvQ5+VrJjDh3lil48LILJxhICQf66dQ8t/BJyOo/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="sources/aos_lib.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.css"
+        integrity="sha512-KOWhIs2d8WrPgR4lTaFgxI35LLOp5PRki/DxQvb7mlP29YZ5iJ5v8tiLWF7JLk5nDBlgPP1gHzw96cZ77oD7zQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,200,0,0" />
+</head>
+
+<body>
+
+
+    <div id="fadecontainer">
+        <div id="fade"></div>
+        <div id="fade2"></div>
+    </div>
+
+
+    <div class="navcontainer">
+        <nav>
+            <div class="logo">
+                <a href="./index.html" class="homeicon"><img class="navlogo" src="./sources/latite.webp"></a>
+            </div>
+            <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+                <i class="bi bi-list"></i>
+            </label>
+            <ul>
+                <a onclick="toggleAlertDownlaodButton(); toggleDownload();">Downloads</a>
+                <a href="#faq">FAQ</a>
+                <a onclick="toggleBeta()">Beta</a>
+                <a onclick="toggleLicense()">License</a>
+                <a href="https://discord.gg/GpV3w5tyBs" target="_blank">Discord</a>
+                <a href="https://github.com/Plextora/LatiteInjector" target="_blank">Github</a>
+            </ul>
+        </nav>
+    </div>
+
+
+    <header class="fscontainer">
+        <div class="brand">
+            <div class="iconcontainer">
+                <img class="icon" src="./sources/latite.webp">
+            </div>
+            <div class="logotextbox">
+                <p class="logotext">Latite&nbsp;Client</p>
+            </div>
+        </div>
+        <div class="desc">
+            <p class="desctext">A Legitimate DLL Client For Minecraft Windows 10/11 Edition</p>
+        </div>
+        <div class="buttonbox">
+            <button class="button" onclick="toggleAlertDownlaodButton(); toggleDownload();">
+                Download&nbsp;<i class="fa-solid fa-download"></i>
+            </button>
+            <form action="https://discord.gg/GpV3w5tyBs" target="_blank">
+                <button class="button-discord" href='https://discord.gg/GpV3w5tyBs' target="_blank">Discord&nbsp;<i
+                        class="fa-brands fa-discord"></i></button>
+            </form>
+        </div>
+    </header>
+
+
+    <main class="content">
+
+
+        <section class="grid1container">
+            <p class="section-header" data-aos="fade" id="trigger" data-aos-easing="ease-in-out">What to expect in
+                Latite Client <span class="text-gradient">V2</span></p>
+            <div class="grid1">
+                <div class="item item1" data-aos-anchor="#trigger" data-aos="fade-down" data-aos-easing="ease-out"
+                    data-aos-delay="200">
+                    <div class="desc1">
+                        <p class="h1">Clean UI</p>
+                        <p class="p1">Latite Client offers a clean user interface for you to browse the many mods it
+                            features.
+                            Navigate with ease by using the filters and search bar.</p>
+                    </div>
+                    <div class="client-img-container">
+                        <img src="./sources/client2.webp" alt="Latite Client Mod Menu" loading="lazy" class="client-img">
+                    </div>
+                    <div class="client-img-container-mobile">
+                        <img src="./sources/client-mobile.webp" alt="Latite Client Mod Menu" loading="lazy" class="client-img-mobile">
+                    </div>
+                    <img src="./sources/gradient2.webp" loading="lazy" class="bgradient">
+                </div>
+                <div class="item item2" data-aos="fade-down" data-aos-easing="ease-out" data-aos-delay="300"
+                    data-aos-anchor="#trigger">
+                    <div class="desc2">
+                        <p class="h1">Many Features</p>
+                        <p class="p1">Pick from 30+ mods, like Motion Blur, Keystrokes, Zoom, and much more!
+                            Through every update we add new features, like Plugins.</p>
+                    </div>
+                    <img src="./sources/modules.webp" alt="List of many Latite Client mods" loading="lazy" class="mods-list">
+                </div>
+                <div class="item item3" data-aos="fade-down" data-aos-easing="ease-out" data-aos-delay="400"
+                    data-aos-anchor="#trigger">
+                    <div class="desc3">
+                        <p class="h1">Plugin System</p>
+                        <p class="p1">Create or get custom mods and commands using our API built on JavaScript and
+                            TypeScript.
+                        </p>
+                        <div class="sdocs-container">
+                            <a href="https://latitescripting.github.io" target="_blank" class="sdocs">See Docs<i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                            <a href="https://github.com/LatiteScripting/Scripts" target="_blank" class="sdocs">Plugins<i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- <img src="./sources/plugins.webp" alt="Image of a script" loading="lazy" class="plugin-img"> -->
+                    <div class="plugin-img"></div>
+                </div>
+                <div class="item item4" data-aos="fade-down" data-aos-easing="ease-out" data-aos-delay="500"
+                    data-aos-anchor="#trigger">
+                    <img src="./sources/cus2.webp" alt="Many modifiers to cuztomize the mods" loading="lazy" class="customize-img">
+                    <div class="desc4">
+                        <p class="h1">Customization</p>
+                        <p class="p1">Customize the accent color of the client and most of the mods to your
+                            likings! You can modify color,
+                            position of modules, size, keybinds, and so much more.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="interactive">
+            <div class="l-desc-container" data-aos="fade" data-aos-easing="ease-in-out" id="trigger2">
+                <p class="l-section-header">Interactive <span class="l-text-gradient">Demo</span></p>
+                <p class="l-desc">Test out the Latite Client Mod Menu, right in your browser!</p>
+            </div>
+            <iframe src="./sources/ModMenu/index.html" class="interiframe" data-aos="fade-down"
+                data-aos-easing="ease-out" data-aos-delay="200" data-aos-anchor="#trigger2">
+            </iframe>
+            <p class="disclaimer" data-aos="fade-down" data-aos-easing="ease-out" data-aos-delay="300"
+                data-aos-anchor="#trigger2">
+                <span class="disclaimer-btn" onclick="toggleDisclaimer()">Disclaimer</span>
+                <span id="disclaimer-text" style="display: none;">
+                    This is just a replication of Latite Client using HTML, CSS and Javascript.
+                    Don't expect all features and functionality to be included in this demo. There will be some
+                    inaccuracies compared to the actual product.
+                </span>
+            </p>
+        </section>
+
+
+        <section class="trailer-container">
+            <p class="section-header" data-aos="fade" data-aos-easing="ease-in-out" id="trigger3">
+                Latite Client <span class="text-gradient">Trailer</span>
+            </p>
+            <img src="sources/dark.svg" class="dark-circle" data-aos="fade-down" data-aos-easing="ease-out" data-aos-delay="200"
+            data-aos-anchor="#trigger3">
+            <img src="sources/light.svg" class="light-circle" data-aos="fade-down" data-aos-easing="ease-out" data-aos-delay="200"
+            data-aos-anchor="#trigger3">
+            <video controls class="trailer" data-aos="fade-down" data-aos-easing="ease-out" data-aos-delay="200"
+                data-aos-anchor="#trigger3">
+                <source src="./sources/FinalRenderLatiteClientTrailer.mp4" type="video/mp4">
+            </video>
+        </section>
+
+
+        <section class="launcher-container">
+            <div class="l-desc-container" data-aos="fade" data-aos-easing="ease-in-out" id="trigger4">
+                <p class="l-section-header">Latite Client <span class="l-text-gradient">Launcher</span>
+                </p>
+                <p class="l-desc">Launch Latite Client with ease using our Launcher!</p>
+            </div>
+            <div class="l-gr" data-aos="fade-down" data-aos-easing="ease-out" data-aos-delay="200"
+                data-aos-anchor="#trigger4">
+                <img src="./sources/launcher.webp" alt="Latite Client Launcher" loading="lazy" class="launcher-img">
+                <img src="sources/bgradient.webp" class="bgradient2">
+            </div>
+        </section>
+
+
+        <section class="faq-container" id="faq">
+            <p class="f-section-header" data-aos="fade" data-aos-easing="ease-in-out">
+                Latite Client <span class="l-text-gradient">FAQ</span>
+            </p>
+            <div class="fade-faq" data-aos="fade-down" data-aos-easing="ease-out" data-aos-delay="200"
+                data-aos-anchor="#faq">
+
+                <div class="question">
+                    <button class="faqbutton">
+                        <span><strong>1. </strong>What is Latite Client?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                    <div id="faqp">
+                        Latite Client is a legitimate DLL client for Minecraft Windows 10/11 Edition. This
+                        binary modifies your game and adds useful features for PVP and/or Survival!
+                    </div>
+                </div>
+
+                <div class="question">
+                    <button class="faqbutton">
+                        <span><strong>2. </strong>How do I download Latite Client?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                    <div id="faqp">
+                        <p>
+                            <strong>Method 1:</strong><br>
+                            Download the Latite Injector from <code>#download</code> and run it. Afterwards, select your
+                            current
+                            version of Minecraft under the Launch Button (this is NOT a version switcher, please
+                            select your CURRENT Minecraft version or your game will crash) and press launch.
+                            <br><br>
+                            <strong>Method 2:</strong><br>
+                            If method 1 does not work, you can instead download the DLL from <code>#download</code> and
+                            use
+                            an external
+                            injector to inject the Latite DLL instead. You can use the <a class="links"
+                                href="https://github.com/fligger/FateInjector/" target="_blank">Fate Injector&nbsp;<i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>,
+                            the <a class="links" href="https://github.com/ambiennt/MCBE-DLL-Injector"
+                                target="_blank">MCBE DLL
+                                Injector&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a> etc. If you do
+                            not
+                            know how to inject the DLL using
+                            whatever external injector you have, you can look for support in
+                            <code>#public-support</code>.
+                            Please do not open
+                            a ticket for this as it is usually a simple process.
+                        </p>
+                        <iframe class="tutorial-embed" src="https://www.youtube.com/embed/h3v849ayuZY"
+                            title="Latite Client Download Tutorial"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <button class="faqbutton">
+                        <span><strong>3. </strong>Which one do I download?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                    <div id="faqp">
+                        <ul class="faqlist">
+                            <li><strong>Legacy Latite Injector</strong> - a very old version of the Latite Injector,
+                                only use this if you encounter issues with the current injector.</li>
+                            <li><strong>Latite Injector</strong> - this is the option most people choose, it's the
+                                default way to inject the client.</li>
+                            <li><strong>Latite Minimal</strong> - This is a simpler version of the main injector for
+                                users encountering antivirus issues or users in India as github is blocked in that
+                                country and therefore only this version of the injector will work for them.</li>
+                            <li><strong>DLL Download</strong> - This is the client itself, only download this if you
+                                want to use it with other injectors (no you will not be able to use the client by
+                                opening the DLL itself)</li>
+                        </ul>
+                        <img src="./sources/faq-help-dl.webp" alt="Latite Client Bot Discord Message" loading="lazy" class="faq-help-dl">
+                    </div>
+                </div>
+
+                <div class="question">
+                    <button class="faqbutton">
+                        <span><strong>4. </strong>Why does Latite's Injector get flagged as a virus?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                    <div id="faqp">
+                        <p>
+                            <strong>Latite Client is not a virus!</strong> It's just a false positive due to windows and
+                            most antiviruses not liking DLL files, as a lot of DLLs are used for malicious purposes.
+                            However, the Latite DLL is completely safe and will only affect Minecraft. <span
+                                id="explanation" onclick="toggleExplanation()">Want a bigger explaination?</span>
+                        <p id="explanation-text" style="display: none;">
+                            Basically, every Bedrock client that isn't a resource pack uses a DLL file. DLL files have a
+                            lot of use cases over the history of Windows, but for purposes of Minecraft clients, they
+                            can hook into a running program (such as Minecraft) and add or change features. DLL files
+                            are not just used for Bedrock modding. For example, another game that uses DLLs for modding
+                            is Beat Saber. The process is a bit different - Beat Saber uses a standardized mod loader,
+                            while most clients are only built to accommodate themselves - but the same file type and
+                            idea are used.
+                            <br><br>
+                            However, because of the ability for DLL files to mess with the program, it's easy to realize
+                            that the changes in the program could be malicious. In fact, malicious DLL injection used to
+                            be a form of malware. Key word: used to. Most malware makers likely realized that requiring
+                            the target to have a preexisting program limited the scope of their Shenanigans™️ too much,
+                            and they primarily changed gears to stuff like background tasks or executables. However,
+                            since it's obviously bad for antiviruses to detect fewer viruses, antiviruses kept in the
+                            ability to detect these.
+                            <br><br>
+                            Antiviruses generally operate on pattern recognition. If the file in question isn't on some
+                            sort of blacklist or whitelist, generally, this is good enough for them to do their job. But
+                            in some edge cases, this pattern recognition can go wrong. Bedrock clients are one of these
+                            edge cases. A program that opens another program and immediately injects an internet-sourced
+                            DLL into it sounds really sketchy... until you consider that the program being injected with
+                            a DLL is Minecraft Bedrock, which is a UWP program, and the DLL is just a mod. UWPs have the
+                            advantage of a LOT of limitations on system access, and as a result, you can't inject them
+                            with anything that can be a meaningful virus. Worst-case scenario is your computer freezing
+                            lol.
+                            <br><br>
+                            So why is Latite's injector - and only Latite's injector - detected? It's primarily because
+                            it's written in C#. C# as a language is very easy to reverse engineer and decompile, and I
+                            wouldn't be shocked if antiviruses have a partial decompiler to check programs written in
+                            it. Onix's launcher, as another example, is written in C++, which is a lot harder to do this
+                            to, so it's detected less by default. Another reason is a whitelist system in place by
+                            Microsoft, but that's a lot easier to understand; IIRC the stable injector has been
+                            submitted for approval but the process is very slow. Onix's launcher has been submitted for
+                            this, so on top of being harder for antiviruses to crack, it also has Windows saying "yeah,
+                            this is fine." But back to Latite, since it's easy to see "under the hood" in C#, that means
+                            antiviruses see that "program opens another program and puts a DLL from the internet into
+                            it" in a lot of clarity, and immediately slap it with a Trojan label. But for the reasons
+                            said above, this is completely fine in this case. Pattern recognition can and will go wrong
+                            at some point. Something something Among Us fire alarms.
+                            <br><br>
+                            I should add: all of this is SPECIFICALLY on the injector. I can say with certainty that,
+                            after injection, the DLL itself has no reason to send or receive anything to or from the
+                            internet. You can use another DLL injector if you want to; plenty of those don't have issues
+                            like Latite's has. In fact, if I remember right, you could probably use Onix's injector and
+                            have the same one-click convenience factor after a bit of setup. Don't quote me on that
+                            though.
+                            <br><br>
+                            And all of that is assuming the file is malicious to begin with. I've been using Latite for
+                            probably over a year now over 2 computers, and I haven't had any issues. That said, I'm just
+                            some computer-obsessed trans girl on the internet, and you are completely free to disregard
+                            anything you read here. If you don't trust it, don't run it, internet safety 101.
+                            <br><br>
+                            <i>(Thanks Eclipse [1unar_eclipse] for the in-depth explanation)</i>
+                        </p>
+                        <br><br>
+                        <strong>What you can do about it:</strong>
+                        <ul class="faqlist">
+                            <li>Exclude Latite from your antivirus</li>
+                            <li>Download the Legacy Latite Injector or Latite Minimal and use it.</li>
+                            <li>Use a different injector and inject Latite manually</li>
+                            <li>View the injector's source code at <a class="links"
+                                    href="https://github.com/Plextora/LatiteInjector" target="_blank">here&nbsp;<i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a> (and even build it
+                                yourself)
+                            </li>
+                        </ul>
+                        </p>
+                        <iframe class="tutorial-embed" src="https://www.youtube.com/embed/h3v849ayuZY"
+                            title="Latite Client Download Tutorial"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <button class="faqbutton">
+                        <span><strong>5. </strong>Latite Client isn't working/injecting!</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                    <div id="faqp">
+                        If you're having problems injecting Latite Client, try installing
+                        <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe" class="links" target="_blank">Microsoft
+                            Visual C++ Redistributable&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a>.
+                        If it's still not working, try using Latite Minimal or try using an external injector with the
+                        Latite DLL (refer to <strong>Method 2</strong> in <strong>FAQ #2</strong>). This problem could
+                        also be caused by your antivirus, like Windows
+                        Security.
+                        <br><br>
+                        COMMON CAUSES:
+                        <ul class="faqlist">
+                            <li>
+                                You're on the x86/32 bit version of Minecraft, in this case if you attempt
+                                to inject Latite it will do nothing. You can solve this issue by downloading
+                                the 64 bit version of the game.
+                            </li>
+                            <li>
+                                The game version you're on is outdated/unsupported (see supported versions in
+                                <strong>FAQ #7</strong>).
+                            </li>
+                            <li>
+                                You selected the wrong version of the client in the injector
+                                <strong>(THIS IS NOT A VERSION SWITCHER, PLEASE SELECT THE VERSION YOUR GAME IS
+                                    ON)</strong>,
+                                which in that case an error message will be shown (if you're on an outdated
+                                version of the injector and inject the wrong version the game will just crash).
+                            </li>
+                            <br>
+                        </ul>
+                        You can also try resetting your config (refer to <strong>FAQ #7</strong>).
+                    </div>
+                </div>
+
+                <div class="question">
+                    <button class="faqbutton">
+                        <span><strong>6. </strong>My game crashed after I injected Latite, what do I do?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                    <div id="faqp">
+                        First, check if the version you selected is the same as your Minecraft version, if it isn't, and
+                        your current Minecraft version isn't supported by Latite, you can upgrade/downgrade your game
+                        via <a href="https://github.com/MCMrARM/mc-w10-version-launcher" class="links"
+                            target="_blank">MCMrARM's Version Switcher&nbsp;<i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>,
+                        <a href="https://github.com/JiayiSoftware/JiayiLauncher" class="links" target="_blank">Jiayi
+                            Launcher&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a>,
+                        <a href="https://bedrocklauncher.github.io/" class="links" target="_blank">Bedrock
+                            Launcher&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a> or others.
+                        <br><br>
+                        If your version of Minecraft is currently supported by Latite, just select your current
+                        Minecraft version
+                        under the "LAUNCH" button.
+                        <br><br>
+                        If your Minecraft version is the same as the version you selected and it still crashes, please
+                        open a ticket and a staff member will assist you shortly.
+                        <br><br>
+                        You can also try resetting your config (refer to <strong>FAQ #7</strong>).
+                    </div>
+                </div>
+
+                <div class="question">
+                    <button class="faqbutton">
+                        <span><strong>7. </strong>How can I reset my config?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                    <div id="faqp">
+                        To reset your config, do Windows Key + R and paste the following:
+                        <br>
+                        <code>%localappdata%\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\Latite</code>
+                        <br><br>
+                        Then find and delete the file named "config.json".
+                        <br><br>
+                        Restart Minecraft afterwards.
+                    </div>
+                </div>
+
+                <div class="question">
+                    <button class="faqbutton">
+                        <span><strong>8. </strong>Does Latite Client support my device?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                    <div id="faqp">
+                        <p>
+                            <strong>
+                                Latite Client ONLY supports 64-bit Windows 10/11 Operating Systems with x64-based
+                                processors.
+                            </strong>
+                            You can check your device information by going into Windows Settings > System > About. Now
+                            look for
+                            "System type"
+                            <br><br>
+                            If it says:
+                        <ul class="faqlist">
+                            <li>"64-bit operating system, x64-based processor" you will be able to use Latite Client
+                            </li>
+                            <li>"32-bit operating system, x64-based processor" you must install a 64-bit Windows OS
+                                in order to use Latite Client.
+                            </li>
+                            <li>"32-bit operating system, x86-based processor" you will not be able to use Latite
+                                Client, unfortunately.</li>
+                        </ul>
+                        <br>
+                        <strong>Keep in mind that Latite Client will not work on x86 builds of Minecraft!</strong>
+                        <br><br>
+                        <div class="faqtestbutton" onclick="toggleAlertButton()">Test if i'm compatible</div>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <button class="faqbutton">
+                        <span><strong>9. </strong>What versions of Minecraft does Latite Client support?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                    <div id="faqp">
+                        Latite Client currently supports:
+                        <ul class="faqlist">
+                            <li>1.20.6x</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <button class="faqbutton">
+                        <span><strong>10. </strong>I'm on an unsupported version of Minecraft, how do I switch?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                    <div id="faqp">
+                        You can update/downgrade your Minecraft version by using version switchers, such as
+                        <a href="https://github.com/MCMrARM/mc-w10-version-launcher" class="links"
+                            target="_blank">MCMrARM's Version Switcher&nbsp;<i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>,
+                        <a href="https://github.com/JiayiSoftware/JiayiLauncher" class="links" target="_blank">Jiayi
+                            Launcher&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a>,
+                        <a href="https://bedrocklauncher.github.io/" class="links" target="_blank">Bedrock
+                            Launcher&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a> and others.
+                        <br><br>
+                        Keep in mind:
+                        <ul class="faqlist">
+                            <li>This will NOT work if you did not buy Minecraft legitimately.</li>
+                            <li>Developer mode has to be enabled on your windows computer for most of these applications
+                                to work.</li>
+                            <li>Your Minecraft data (worlds, resource packs) may be lost when installing these apps, so
+                                make sure backup your data before downgrading/updating!</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <button class="faqbutton">
+                        <span><strong>11. </strong>What is Latite Client Beta and how do I gain access?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                    <div id="faqp">
+                        If you boost our discord server or subscribe to <a href="https://www.patreon.com/latiteclient"
+                            class="links">our patreon&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a>,
+                        you get access to all beta channels (<code>#beta-announcement</code>,
+                        <code>#beta-releases</code>, <code>#beta-chat</code> and more). <code>#beta-releases</code>
+                        contains DLLs for Latite
+                        Client not released to the public yet. For example, it could contain a version
+                        of Latite Client that has some features that aren't released to the public yet.
+                    </div>
+                </div>
+
+                <div class="question">
+                    <button class="faqbutton">
+                        <span><strong>12. </strong>How do I disable Windows Security?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                    <div id="faqp">
+                        Try following the steps in this article from Microsoft:
+                        <a href="https://support.microsoft.com/en-us/windows/turn-off-defender-antivirus-protection-in-windows-security-99e6004f-c54c-8509-773c-a4d776b77960"
+                            class="links">https://support.microsoft.com/en-us/windows/turn-off-defender-antivirus-protection-in-windows-security-99e6004f-c54c-8509-773c-a4d776b77960</a>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <button class="faqbutton">
+                        <span><strong>13. </strong>Why Latite Client doesn't support mobile devices</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                    <div id="faqp">
+                        Latite Client will <strong>NEVER</strong> have mobile support.
+                        "but why!!! I want a client!!!!!!!!11111111111111" you may ask, here's why:
+                        <ul class="faqlist">
+                            <li>A full rewrite would be needed to port Latite Client to mobile.</li>
+                            <li>
+                                So many phones/tablets come in vastly different sizes, specs, etc. A ton of work
+                                would be required to make sure most devices have a seamless experience.
+                            </li>
+                            <li>
+                                iOS wouldn't be supported at all, I'm pretty sure you need a MacBook to develop iOS
+                                apps (thanks Apple) and we (the devs) don't have those.
+                            </li>
+                            <li>
+                                DLL injection isn't really a thing on mobile devices, so we'd need an entirely
+                                different strategy for mobile, further complicating the project.
+                            </li>
+                            <li>
+                                2 entire different codebases would be needed for Android and Windows, making things an
+                                absolute hell to manage.
+                            </li>
+                        </ul>
+                        Update: Atlas Client, made by the same developer is in the works for Android Devices.
+                    </div>
+                </div>
+
+                <div class="question">
+                    <button class="faqbutton">
+                        <span><strong>14. </strong>What mods does Latite Client feature?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                    <div id="faqp">
+                        Feature List:
+                        <br>
+                        <ul class="faqlist">
+                            <li>Armor HUD</li>
+                            <li>BehindYou (Snaplook)</li>
+                            <li>Bottom Chat</li>
+                            <li>Bow Indicator</li>
+                            <li>Break Indicator</li>
+                            <li>Block Overlay</li>
+                            <li>Chunk Borders</li>
+                            <li>Cinematic Camera</li>
+                            <li>Clock</li>
+                            <li>Combo Counter</li>
+                            <li>CPS Counter</li>
+                            <li>Environment Changer</li>
+                            <li>FPS Display</li>
+                            <li>Freelook</li>
+                            <li>Fullbright</li>
+                            <li>GUI Scale Changer</li>
+                            <li>Hitboxes</li>
+                            <li>Hurt Color</li>
+                            <li>Health Warning</li>
+                            <li>Item Counter</li>
+                            <li>Item Tweaks</li>
+                            <li>Java Debug Info</li>
+                            <li>Keystrokes</li>
+                            <li>Motion Blur</li>
+                            <li>Movable Bossbar</li>
+                            <li>Movable Paperdoll</li>
+                            <li>Movable Scoreboard</li>
+                            <li>Nickname</li>
+                            <li>Ping Display</li>
+                            <li>Position Display (displays your coordinates)</li>
+                            <li>Reach Display</li>
+                            <li>Server Display (displays the IP address of the server you're on)</li>
+                            <li>Speed display</li>
+                            <li>Tab List</li>
+                            <li>Third person nametag</li>
+                            <li>Toggle Sprint</li>
+                            <li>Zoom</li>
+                        </ul>
+                        <br>
+                        37 Total Mods
+                    </div>
+                </div>
+
+                <div class="question">
+                    <button class="faqbutton">
+                        <span><strong>15. </strong>Will I get banned on servers for using this client?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                    <div id="faqp">
+                        That depends on individual server rules. Most servers would not ban you for using Latite, but it
+                        is recommended to read the server rules just to be safe.
+                        <br><br>
+                        (It is safe to use the client on all featured servers and most popular non-featured servers such
+                        as nethergames)
+                    </div>
+                </div>
+
+                <div class="question">
+                    <button class="faqbutton">
+                        <span><strong>16. </strong>Why can't I use certain features on some servers?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                    <div id="faqp">
+                        Some servers have restrictions on which modules can or cannot be allowed to be
+                        used on their server. Latite has a feature in which it automatically prevents
+                        such blocked features from being enabled whenever a user is on one of these
+                        servers. However, as there are thousands of different bedrock edition servers,
+                        Latite cannot keep track of which modules are or are not allowed to be used on
+                        each and every single server, therefore Latite will only block modules on certain
+                        major bedrock edition servers.
+                        <br><br>
+                        <strong>HIVE</strong>
+                        <ul class="faqlist">
+                            <li>Freelook</li>
+                        </ul>
+                        <br>
+                        <strong>GALAXITE</strong>
+                        <ul class="faqlist">
+                            <li>Freelook</li>
+                            <li>Toggle Sprint</li>
+                        </ul>
+                        <br>
+                        <strong>NETHERGAMES</strong>
+                        <ul class="faqlist">
+                            <li>Toggle Sprint</li>
+                            <li>Bow Indicator</li>
+                        </ul>
+                        <br>
+                        No modules are blocked on any servers that are not included
+                        in this list. Please study the rules of that server before
+                        proceeding to use the client. Latite will not be held responsible
+                        for any repercussions as a result of using a prohibited module.
+                        Use at your own risk.
+                    </div>
+                </div>
+
+                <div class="question">
+                    <button class="faqbutton">
+                        <span><strong>17. </strong>How do I open the Mod Menu?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                    <div id="faqp">
+                        You open the ModMenu by pressing M and clicking the "Mod Settings" button.
+                    </div>
+                </div>
+
+                <div class="question">
+                    <button class="faqbutton">
+                        <span><strong>18. </strong>How do I change mod positions?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                    <div id="faqp">
+                        You can change mod positions by pressing M, or by clicking the
+                        <img src="./sources/ModMenu/move.webp" alt="EditHUD" width="20px"> icon in the ModMenu.
+                    </div>
+                </div>
+
+                <div class="question">
+                    <button class="faqbutton">
+                        <span><strong>19. </strong>I found a bug, where do I report it?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                    <div id="faqp">
+                        You can report all bugs through the
+                        <code><img src="./sources/forum.webp" alt="EditHUD" width="17px">bugs</code>
+                        forum channel in our discord server.
+                    </div>
+                </div>
+
+                <div class="question">
+                    <button class="faqbutton">
+                        <span><strong>20. </strong>Where do I suggest new features for the client or discord?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                    <div id="faqp">
+                        You can post all suggestions in the 
+                        <code><img src="./sources/forum.webp" alt="EditHUD" width="17px">suggestions</code>
+                        forum channel in our discord server.
+                    </div>
+                </div>
+
+                <div class="question">
+                    <button class="faqbutton">
+                        <span><strong>21. </strong>I have an issue, where do I get help?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                    <div id="faqp">
+                        If your the solution to your problem isn't found in the FAQ, you can
+                        ask for help in <code>#public-support</code> or contact staff by opening a ticket in
+                        <code>#open-a-ticket</code>.
+                    </div>
+                </div>
+
+                <div class="question">
+                    <button class="faqbutton">
+                        <span><strong>22. </strong>What are the YouTube Role Requirements?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                    <div id="faqp">
+                        YouTube Role Requirements:
+                        <br>
+                        <ul class="faqlist">
+                            <li>
+                                Has over 5k subscribers + makes a video about Latite
+                            </li>
+                            <li>
+                                Makes videos about Minecraft BE
+                            </li>
+                            <li>
+                                Active on YouTube, gets a considerable amount of views
+                            </li>
+                        </ul>
+                        <br>
+                        Please make a ticket at <code>#open-a-ticket</code> in our discord server to chat with us in
+                        order to apply for the YouTuber role.
+                    </div>
+                </div>
+
+                <div class="question">
+                    <button class="faqbutton">
+                        <span><strong>23. </strong>Latite Social Media</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                    <div id="faqp">
+                        Here are all the Latite Social Medias:
+                        <ul class="faqlist">
+                            <li>X (formerly Twitter): <a href="https://x.com/@LatiteClient" class="links">@Latite
+                                    Client</a></li>
+                            <li>Discord: <a href="https://discord.gg/GpV3w5tyBs" class="links">discord.gg/latite</a></li>
+                        </ul>
+                        <br>
+                        Any accounts not including in this list claiming to be Latite Client are
+                        impersonating/unofficial.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="atlas-container" id="atlas">
+            <div class="atlasbrand">
+                <img src="sources/atlas.webp" class="atlas-logo">
+                <div class="brandtext">
+                    <h1>Atlas Client</h1>
+                    <h3>Legitimate Client for MCPE</h3>
+                </div>
+            </div>
+            <a href="https://discord.gg/pRq73GPVGb" class="atlaslink">
+                <button class="atlasdownload">
+                    DOWNLOAD&nbsp;FOR&nbsp;<i class="fa-brands fa-android"></i>
+                </button>
+            </a>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <div class="footer-bottom">
+            <p>Latite Client. Website designed and developed by <strong>CreativeMC</strong></p>
+            <p class="credlink" onclick="toggleCredits()">Credits</p>
+        </div>
+    </footer>
+
+
+    <div class="overlay-container alert" onclick="closeAlerts()">
+        <div class="overlay-box alert">
+            <div class="overlay-header alert">
+                <p>Unsupported Device!</p>
+                <i class="bi bi-x-lg" onclick="closeAlerts()"></i>
+            </div>
+            <div class="overlay-content alert">
+                <p>
+                    It appears that you are on an unsupported device. Latite Client only supports
+                    a 64-bit Windows OS and a x64-based processor.
+                    <br><br>
+                    If you want a client for Andriod, go check out <span onclick="closeAlerts(), closeDownload()"><a href="#atlas" style="color: #fff; text-decoration: underline;">Atlas Client</a></span>!
+                    <br><br>
+                    If you think this detection is false,
+                    close this window and feel free to use Latite Client!
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="overlay-container alertGood" onclick="closeAlertsGood()">
+        <div class="overlay-box alertGood">
+            <div class="overlay-header alertGood">
+                <p>Supported Device</p>
+                <i class="bi bi-x-lg" onclick="closeAlertsGood()"></i>
+            </div>
+            <div class="overlay-content alertGood">
+                <p>
+                    Looks like your device is compatible with Latite Client!
+                    Keep in mind that this detection is not 100% correct, but it should
+                    do the job.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="overlay-container dl" onclick="closeDownload()">
+        <div class="overlay-box dl">
+            <div class="overlay-header dl">
+                <p>Downloads</p>
+                <i class="bi bi-x-lg" onclick="closeDownload()"></i>
+            </div>
+            <div class="overlay-content dl">
+                <ul>
+                    <li>
+                        <a class="links" target="_blank"
+                            href="https://github.com/Imrglop/Latite-Releases/raw/main/injector/Injector.exe">
+                            <strong>Latite Injector</strong>&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                        <br>
+                        Use this to launch Latite. The injector might be flagged as a virus,
+                        so make sure you exclude the injector from your antivirus if needed
+                    </li>
+                    <li>
+                        <a class="links" target="_blank"
+                            href="https://github.com/Imrglop/Latite-Releases/raw/deb4542e2f33c072594373e6c48aeb5d5f0ad08e/injector/Injector.exe">
+                            <strong>Legacy Latite Injector</strong>&nbsp;<i
+                                class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                        <br>
+                        The legacy Latite Injector. If you encounter any issues with the main injector (below), use
+                        this.
+                    </li>
+                    <li>
+                        <a class="links" target="_blank"
+                            href="https://latite-client.is-from.space/r/Latite_Minimal.exe">
+                            <strong>Latite Minimal</strong>&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                        <br>
+                        Use this if you have any issues with false virus detections, or your
+                        country (like India) has blocked github.
+                    </li>
+                    <li>
+                        <a class="links" target="_blank"
+                            href="https://github.com/Imrglop/Latite-Releases/releases/latest">
+                            <strong>DLL Download</strong>&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                        <br>
+                        Use this with other injectors.
+                    </li>
+                </ul>
+                Latite Client Download Tutorial:
+                <a class="links" target="_blank" href="https://youtu.be/h3v849ayuZY">
+                    https://youtu.be/h3v849ayuZY&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="overlay-container license" onclick="closeLicense()">
+        <div class="overlay-box license">
+            <div class="overlay-header license">
+                <p>Latite Products License</p>
+                <i class="bi bi-x-lg" onclick="closeLicense()"></i>
+            </div>
+            <div class="overlay-content license">
+                <p class="ltext">
+                    By using the Client name, logo, or any of our files, you agree to these terms:
+                    <br><br>
+                    You are <span><strong>allowed</strong></span> to:
+                    <br><br>
+                    - Use the Latite name and logo in a showcase, such as a YouTube video.
+                    <br>
+                    - Modify the injector for personal use
+                    <br>
+                    - Contribute to this launcher's source by opening a PR/Forking the launcher
+                    <br><br>
+                    You are <span><strong>not allowed</strong></span> to:
+                    <br><br>
+                    - Distribute, redistribute or sell any of our files in any form of media. (this only includes our
+                    files that we made. we are not affiliated with Microsoft or Mojang)
+                    <br>
+                    - Distribute, redistribute, or sell a modified version of the injector in any form of media.
+                    <br>
+                    - Use the Latite name as a Client in any form of media, as if it's an official Client server, or
+                    claiming to be official.
+                    <br><br><br>
+                    <span><strong>If you do not comply with the above terms, we will work to take your content
+                            down.</strong></span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="overlay-container beta" onclick="closeBeta()">
+        <div class="overlay-box beta">
+            <div class="overlay-header beta">
+                <p>Beta Access</p>
+                <i class="bi bi-x-lg" onclick="closeBeta()"></i>
+            </div>
+            <div class="overlay-content beta">
+                <p>
+                    To gain access to work in progress beta features, you need to either boost our Discord Server or
+                    subscribe to our Patreon
+                    <a class="links" target="_blank" href="https://www.patreon.com/latiteclient">here&nbsp;<i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a>.
+                    You must join our
+                    <a class="links" target="_blank" href="https://discord.gg/GpV3w5tyBs">Discord&nbsp;Server&nbsp;<i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    to recieve your rewards.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="overlay-container credit" onclick="closeCredits()">
+        <div class="overlay-box credit">
+            <div class="overlay-header credit">
+                <p>Credits</p>
+                <i class="bi bi-x-lg" onclick="closeCredits()"></i>
+            </div>
+            <div class="overlay-content credit">
+                <div class="credit-division1">
+                    <p><strong>Client Developer:</strong><br>Imrglop (jayrsky)</p>
+                    <p><strong>Launcher Developer:</strong><br>Plextora (plextora)<br>CreativeMC (creativemc)</p>
+                    <p><strong>Website Developer:</strong><br>CreativeMC (creativemc)</p>
+                </div>
+                <div class="credit-division2">
+                    <strong>Client Contributors:</strong><br>
+                    <ul>
+                        <li>carlton (1phased)</li>
+                        <li>Plextora (plextora)</li>
+                        <li>CreativeMC (creativemc)</li>
+                        <li>soppy (soupier)</li>
+                        <li>rice (rice.exe_)</li>
+                        <li>vastrakai</li>
+                        <li>Distant</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./sources/app.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 350,
+            once: true,
+        });
+    </script>
+</body>
+
+</html>
