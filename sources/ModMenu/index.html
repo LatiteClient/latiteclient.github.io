@@ -1,0 +1,2184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.css"
+        integrity="sha512-imTMcrMfwTWMwbgH3ComWWGCoDCo2jO1Qrvoa7B/Kcy7MrP5XMojK/Ede5uYofzcYyx4aFXdwzsm1QxdQXZreg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/webp" href="../favicon.png">
+    <title>Latite Client Demo</title>
+</head>
+
+<body>
+    <div class="container">
+        <video src="./bg.mp4" loop muted autoplay class="bg" id="bg"></video>
+        <button class="modopenbtn click" id="zoomButton" onclick="toggleZoom()">Mod Settings</button>
+        <button class="modopenbtn flash" id="flash">Mod Settings</button>
+        <div id="move-container">
+            <div class="draggable-box box1" id="box1" style="bottom: 10px; right: 10px;"></div>
+            <div class="draggable-box box2" id="box2" style="top: 7%; left: calc(50% - 80px);"></div>
+            <div class="draggable-box box3" id="box3" style="bottom: 0; left: 0;"></div>
+        </div>
+        <div class="modmenu setting" id="setting">
+            <div class="bar" id="bar">
+                <div class="logo">
+                    <img class="logoimg" src="./latite.webp">
+                    <p class="logotext">Latite Client</p>
+                </div>
+                <div class="icongroup">
+                    <img class="icons v click" src="./back.webp" onclick="goToMain()">
+                    <img class="icons x click" src="./x.webp" onclick="closeBox()">
+                </div>
+            </div>
+            <div class="filters">
+                <div class="searchgroup">
+                    <img src="./sch.webp" class="searchicon click">
+                    <input type="text" placeholder="Search Settings" name="search" class="search click"
+                        autocomplete="off">
+                </div>
+            </div>
+            <div class="mainsetting">
+                <div class="row1">
+                    <div class="col1">
+                        <div class="sldr-cont">
+                            <span style="padding: 0; margin: 0; display: inline;">Blur Intensity</span>
+                            <input type="range" class="range" id="rangeInput" name="rangeInput" min="1" max="30"
+                                value="10" oninput="amount.value=rangeInput.value">
+                            <output name="amount" id="amount" for="rangeInput">10</output>
+                        </div>
+                        <div style="filter: opacity(0); pointer-events: none;">&nbsp;</div>
+                        <div>
+                            <span class="keybind">M</span>
+                            Menu Key
+                        </div>
+                        <div>
+                            <span class="keybind">End</span>
+                            Eject Key
+                        </div>
+                        <div>
+                            <span class="colorbox">
+                                <span class="overlay" style="background-color: #323976;"></span>
+                            </span>
+                            Accent Color
+                        </div>
+                        <div id="hdfnt">
+                            <span class="hdfnt">Default</span>
+                            HUD Font
+                        </div>
+                    </div>
+                    <div class="col2">
+                        <div>
+                            <input type="checkbox" id="blurchk" class="click" checked>
+                            <span>Menu Blur</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="click">
+                            <span>Use DX11 (+FPS)</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="click">
+                            <span>Minimal View Bob</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="mcrftin" class="click">
+                            <span>Use Minecraft Renderer</span>
+                        </div>
+                        <div id="txtshdw">
+                            <input type="checkbox" class="click">
+                            <span>Text Shadow</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="blurchk" class="click" checked>
+                            <span>Latite Client Presence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modmenu" id="modmenu">
+            <div class="bar" id="bar">
+                <div class="logo">
+                    <img class="logoimg" src="./latite.webp">
+                    <p class="logotext">Latite Client</p>
+                </div>
+                <div class="icongroup">
+                    <img class="icons click" src="./sting.webp" onclick="openSetting()">
+                    <img class="icons click" src="./move.webp" onclick="moveMods()">
+                    <img class="icons x click" src="./x.webp" onclick="closeBox()">
+                </div>
+            </div>
+            <div class="filters">
+                <div class="searchgroup">
+                    <img src="./sch.webp" class="searchicon click">
+                    <input type="text" placeholder="Search" name="search" class="search click" autocomplete="off">
+                </div>
+                <button class="filterbutton click hold" onclick="handleFilter(event, 'all')">All</button>
+                <button class="filterbutton click" onclick="handleFilter(event, 'game')">Game</button>
+                <button class="filterbutton click" onclick="handleFilter(event, 'hud')">HUD</button>
+                <button class="filterbutton click" onclick="handleFilter(event, 'script')">Plugins</button>
+            </div>
+            <div class="modules">
+
+
+
+
+
+
+
+
+                <div class="column c1">
+
+                    <div class="item hud" id="mod1">
+                        <div class="item-header">
+                            Armor HUD
+                            <div class="toggle click" onclick="toggleBorder('mod1')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Shows items you're wearing</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Size</span>
+                                        <input type="range" class="range" id="sizeInput" min="0" max="4" value="1"
+                                            oninput="sizeAmount.value=sizeInput.value" step="0.05">
+                                        <output id="sizeAmount" for="sizeInput">1</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Force Minecraft Renderer</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="keybox">Vertical</span>Mode
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Show Durability</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay" style="background-color: #ffffff;"></span>
+                                        </span>
+                                        Text Color
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item hud" id="mod2">
+                        <div class="item-header">
+                            Server Display
+                            <div class="toggle click" onclick="toggleBorder('mod2')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Displays what server you are on</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Size</span>
+                                        <input type="range" class="range" id="sizeInputSeDi" min="0" max="4" value="1"
+                                            oninput="sizeAmountSeDi.value=sizeInputSeDi.value" step="0.05">
+                                        <output id="sizeAmountSeDi" for="sizeInputSeDi">1</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Force Minecraft Renderer</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="keybox">Non-Default</span>Show Port
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click" checked>
+                                        <span>Featured Server Name</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click bgToggle" checked>
+                                        <span>Background</span>
+                                    </div>
+                                    <div class="fixedToggle">
+                                        <div class="opt-cont fixed-opt">
+                                            <input type="checkbox" class="click fixed">
+                                            <span>Fixed Size</span>
+                                        </div>
+                                        <div class="padopt">
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">Pad X</span>
+                                                <input type="range" class="range" id="padxInputSeDi" min="0" max="40"
+                                                    value="22" oninput="padxAmountSeDi.value=padxInputSeDi.value"
+                                                    step="2">
+                                                <output id="padxAmountSeDi" for="padxInputSeDi">22</output>
+                                            </div>
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">Pad Y</span>
+                                                <input type="range" class="range" id="padyInputSeDi" min="0" max="40"
+                                                    value="4" oninput="padyAmountSeDi.value=padyInputSeDi.value"
+                                                    step="2">
+                                                <output id="padyAmountSeDi" for="padyInputSeDi">4</output>
+                                            </div>
+                                        </div>
+
+                                        <div class="bgopt" style="display: none;">
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">BG X</span>
+                                                <input type="range" class="range" id="bgxInputSeDi" min="0" max="400"
+                                                    value="150" oninput="bgxAmountSeDi.value=bgxInputSeDi.value"
+                                                    step="2.5">
+                                                <output id="bgxAmountSeDi" for="bgxInputSeDi">150</output>
+                                            </div>
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">BG Y</span>
+                                                <input type="range" class="range" id="bgyInputSeDi" min="0" max="300"
+                                                    value="45" oninput="bgyAmountSeDi.value=bgyInputSeDi.value"
+                                                    step="2.5">
+                                                <output id="bgyAmountSeDi" for="bgyInputSeDi">45</output>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="opt-cont">
+                                        Prefix
+                                        <input type="text" class="opt-input">
+                                    </div>
+                                    <div class="opt-cont">
+                                        Suffix
+                                        <input type="text" class="opt-input">
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Text Size</span>
+                                        <input type="range" class="range" id="txtSizeInputSeDi" min="2" max="100"
+                                            value="30" oninput="txtSizeAmountSeDi.value=txtSizeInputSeDi.value"
+                                            step="2">
+                                        <output id="txtSizeAmountSeDi" for="txtSizeInputSeDi">30</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay" style="background-color: #ffffff;"></span>
+                                        </span>
+                                        Text
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay"
+                                                style="background-image: linear-gradient(to right, #000000, #00000080);"></span>
+                                        </span>
+                                        Background
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="keybox">Center</span>Alignment
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click outlineToggle">
+                                        <span>Outline</span>
+                                    </div>
+                                    <div class="outlineDisplay" style="display: none;">
+                                        <div class="sldr-cont">
+                                            <span style="padding: 0; margin: 0; display: inline;">Thickness</span>
+                                            <input type="range" class="range" id="outlineThicknessInputSeDi" min="0"
+                                                max="20" value="2"
+                                                oninput="outlineThicknessAmountSeDi.value=outlineThicknessInputSeDi.value"
+                                                step="1">
+                                            <output id="outlineThicknessAmountSeDi"
+                                                for="outlineThicknessInputSeDi">2</output>
+                                        </div>
+                                        <div class="opt-cont">
+                                            <span class="colorbox">
+                                                <span class="overlay" style="background-color: #ffffff;"></span>
+                                            </span>
+                                            Outline Color
+                                        </div>
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Radius</span>
+                                        <input type="range" class="range" id="radiusInputSeDi" min="0" max="10"
+                                            value="0" oninput="radiusAmountSeDi.value=radiusInputSeDi.value" step="1">
+                                        <output id="radiusAmountSeDi" for="radiusInputSeDi">0</output>
+                                    </div>
+                                    <div class="preview">
+                                        Preview is displayed here in the actual client
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item game" id="mod25">
+                        <div class="item-header">
+                            Block Overlay
+                            <div class="toggle click" onclick="toggleBorder('mod25')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Changes the overlay in blocks!</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Render Through</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click" checked>
+                                        <span>Transparent</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click vanillaOutline">
+                                        <span>Vanilla Outline</span>
+                                    </div>
+                                    <div class="opt-cont vanillaDisplay">
+                                        <input type="checkbox" class="click" checked>
+                                        <span>Outline</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay" style="background-color: #000000;"></span>
+                                        </span>
+                                        Outline Color
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click overlayBlockOutline">
+                                        <span>Overlay</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Face Overlay</span>
+                                    </div>
+                                    <div class="opt-cont overlayBlockDisplay" style="display: none;">
+                                        <span class="colorbox">
+                                            <span class="overlay"
+                                                style="background-image: linear-gradient(to right, #ffffff, #ffffff80);"></span>
+                                        </span>
+                                        Overlay Color
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item hud" id="mod3">
+                        <div class="item-header">
+                            Break Progress
+                            <div class="toggle click" onclick="toggleBorder('mod3')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Shows the break progress of the block you're breaking.</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Size</span>
+                                        <input type="range" class="range" id="sizeInputBrPr" min="0" max="4" value="1"
+                                            oninput="sizeAmountBrPr.value=sizeInputBrPr.value" step="0.05">
+                                        <output id="sizeAmountBrPr" for="sizeInputBrPr">1</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Force Minecraft Renderer</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Last Progress</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click bgToggle" checked>
+                                        <span>Background</span>
+                                    </div>
+
+                                    <div class="fixedToggle">
+                                        <div class="opt-cont fixed-opt">
+                                            <input type="checkbox" class="click fixed">
+                                            <span>Fixed Size</span>
+                                        </div>
+
+                                        <div class="padopt">
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">Pad X</span>
+                                                <input type="range" class="range" id="padxInputBrPr" min="0" max="40"
+                                                    value="22" oninput="padxAmountBrPr.value=padxInputBrPr.value"
+                                                    step="2">
+                                                <output id="padxAmountBrPr" for="padxInputBrPr">22</output>
+                                            </div>
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">Pad Y</span>
+                                                <input type="range" class="range" id="padyInputBrPr" min="0" max="40"
+                                                    value="4" oninput="padyAmountBrPr.value=padyInputBrPr.value"
+                                                    step="2">
+                                                <output id="padyAmountBrPr" for="padyInputBrPr">4</output>
+                                            </div>
+                                        </div>
+
+                                        <div class="bgopt" style="display: none;">
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">BG X</span>
+                                                <input type="range" class="range" id="bgxInputBrPr" min="0" max="400"
+                                                    value="150" oninput="bgxAmountBrPr.value=bgxInputBrPr.value"
+                                                    step="2.5">
+                                                <output id="bgxAmountBrPr" for="bgxInputBrPr">150</output>
+                                            </div>
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">BG Y</span>
+                                                <input type="range" class="range" id="bgyInputBrPr" min="0" max="300"
+                                                    value="45" oninput="bgyAmountBrPr.value=bgyInputBrPr.value"
+                                                    step="2.5">
+                                                <output id="bgyAmountBrPr" for="bgyInputBrPr">45</output>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="opt-cont">
+                                        Prefix
+                                        <input type="text" class="opt-input">
+                                    </div>
+                                    <div class="opt-cont">
+                                        Suffix
+                                        <input type="text" class="opt-input">
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Text Size</span>
+                                        <input type="range" class="range" id="txtSizeInputBrPr" min="2" max="100"
+                                            value="30" oninput="txtSizeAmountBrPr.value=txtSizeInputBrPr.value"
+                                            step="2">
+                                        <output id="txtSizeAmountBrPr" for="txtSizeInputBrPr">30</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay" style="background-color: #ffffff;"></span>
+                                        </span>
+                                        Text
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay"
+                                                style="background-image: linear-gradient(to right, #000000, #00000080);"></span>
+                                        </span>
+                                        Background
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="keybox">Center</span>Alignment
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click outlineToggle">
+                                        <span>Outline</span>
+                                    </div>
+                                    <div class="outlineDisplay" style="display: none;">
+                                        <div class="sldr-cont">
+                                            <span style="padding: 0; margin: 0; display: inline;">Thickness</span>
+                                            <input type="range" class="range" id="outlineThicknessInputBrPr" min="0"
+                                                max="20" value="2"
+                                                oninput="outlineThicknessAmountBrPr.value=outlineThicknessInputBrPr.value"
+                                                step="1">
+                                            <output id="outlineThicknessAmountBrPr"
+                                                for="outlineThicknessInputBrPr">2</output>
+                                        </div>
+                                        <div class="opt-cont">
+                                            <span class="colorbox">
+                                                <span class="overlay" style="background-color: #ffffff;"></span>
+                                            </span>
+                                            Outline Color
+                                        </div>
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Radius</span>
+                                        <input type="range" class="range" id="radiusInputBrPr" min="0" max="10"
+                                            value="0" oninput="radiusAmountBrPr.value=radiusInputBrPr.value" step="1">
+                                        <output id="radiusAmountBrPr" for="radiusInputBrPr">0</output>
+                                    </div>
+                                    <div class="preview">
+                                        Preview is displayed here in the actual client
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item game" id="mod4">
+                        <div class="item-header">
+                            Cinematic Camera
+                            <div class="toggle click" onclick="toggleBorder('mod4')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Makes you camera smooth and cinematic</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybind">F4</span>Key
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item game" id="mod5">
+                        <div class="item-header">
+                            Fullbright
+                            <div class="toggle click" onclick="toggleBorder('mod5')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Extra world brightness</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Gamma</span>
+                                        <input type="range" class="range" id="gammaInputFu" min="0" max="25" value="25"
+                                            oninput="gammaAmountFu.value=gammaInputFu.value" step="1">
+                                        <output id="gammaAmountFu" for="gammaInputFu">25</output>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item game" id="mod6">
+                        <div class="item-header">
+                            Hurt Color
+                            <div class="toggle click" onclick="toggleBorder('mod6')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Change the color when entities get hit</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay"
+                                                style="background-image: linear-gradient(to right, #FF0000, #FF000099);"></span>
+                                        </span>
+                                        Color
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item hud" id="mod24">
+                        <div class="item-header">
+                            Speed Display
+                            <div class="toggle click" onclick="toggleBorder('mod24')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Displays your speed in blocks per second.</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Size</span>
+                                        <input type="range" class="range" id="sizeInputSpDi" min="0" max="4" value="1"
+                                            oninput="sizeAmountSpDi.value=sizeInputSpDi.value" step="0.05">
+                                        <output id="sizeAmountSpDi" for="sizeInputSpDi">1</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Force Minecraft Renderer</span>
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Decimals</span>
+                                        <input type="range" class="range" id="sizeInputSpDi" min="0" max="10" value="3"
+                                            oninput="sizeAmountSpDi.value=sizeInputSpDi.value" step="1">
+                                        <output id="sizeAmountSpDi" for="sizeInputSpDi">3</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Y Motion</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click bgToggle" checked>
+                                        <span>Background</span>
+                                    </div>
+                                    <div class="fixedToggle">
+                                        <div class="opt-cont fixed-opt">
+                                            <input type="checkbox" class="click fixed">
+                                            <span>Fixed Size</span>
+                                        </div>
+                                        <div class="padopt">
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">Pad X</span>
+                                                <input type="range" class="range" id="padxInputSpDi" min="0" max="40"
+                                                    value="22" oninput="padxAmountSpDi.value=padxInputSpDi.value"
+                                                    step="2">
+                                                <output id="padxAmountSpDi" for="padxInputSpDi">22</output>
+                                            </div>
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">Pad Y</span>
+                                                <input type="range" class="range" id="padyInputSpDi" min="0" max="40"
+                                                    value="4" oninput="padyAmountSpDi.value=padyInputSpDi.value"
+                                                    step="2">
+                                                <output id="padyAmountSpDi" for="padyInputSpDi">4</output>
+                                            </div>
+                                        </div>
+
+                                        <div class="bgopt" style="display: none;">
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">BG X</span>
+                                                <input type="range" class="range" id="bgxInputSpDi" min="0" max="400"
+                                                    value="150" oninput="bgxAmountSpDi.value=bgxInputSpDi.value"
+                                                    step="2.5">
+                                                <output id="bgxAmountSpDi" for="bgxInputSpDi">150</output>
+                                            </div>
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">BG Y</span>
+                                                <input type="range" class="range" id="bgyInputSpDi" min="0" max="300"
+                                                    value="45" oninput="bgyAmountSpDi.value=bgyInputSpDi.value"
+                                                    step="2.5">
+                                                <output id="bgyAmountSpDi" for="bgyInputSpDi">45</output>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="opt-cont">
+                                        Prefix
+                                        <input type="text" class="opt-input">
+                                    </div>
+                                    <div class="opt-cont">
+                                        Suffix
+                                        <input type="text" class="opt-input" value=" m/s">
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Text Size</span>
+                                        <input type="range" class="range" id="txtSizeInputSpDi" min="2" max="100"
+                                            value="30" oninput="txtSizeAmountSpDi.value=txtSizeInputSpDi.value"
+                                            step="2">
+                                        <output id="txtSizeAmountSpDi" for="txtSizeInputSpDi">30</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay" style="background-color: #ffffff;"></span>
+                                        </span>
+                                        Text
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay"
+                                                style="background-image: linear-gradient(to right, #000000, #00000080);"></span>
+                                        </span>
+                                        Background
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="keybox">Center</span>Alignment
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click outlineToggle">
+                                        <span>Outline</span>
+                                    </div>
+                                    <div class="outlineDisplay" style="display: none;">
+                                        <div class="sldr-cont">
+                                            <span style="padding: 0; margin: 0; display: inline;">Thickness</span>
+                                            <input type="range" class="range" id="outlineThicknessInputSpDi" min="0"
+                                                max="20" value="2"
+                                                oninput="outlineThicknessAmountSpDi.value=outlineThicknessInputSpDi.value"
+                                                step="1">
+                                            <output id="outlineThicknessAmountSpDi"
+                                                for="outlineThicknessInputSpDi">2</output>
+                                        </div>
+                                        <div class="opt-cont">
+                                            <span class="colorbox">
+                                                <span class="overlay" style="background-color: #ffffff;"></span>
+                                            </span>
+                                            Outline Color
+                                        </div>
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Radius</span>
+                                        <input type="range" class="range" id="radiusInputSpDi" min="0" max="10"
+                                            value="0" oninput="radiusAmountSpDi.value=radiusInputSpDi.value" step="1">
+                                        <output id="radiusAmountSpDi" for="radiusInputSpDi">0</output>
+                                    </div>
+                                    <div class="preview">
+                                        Preview is displayed here in the actual client
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item hud" id="mod8">
+                        <div class="item-header">
+                            Toggle Sprint/Sneak
+                            <div class="toggle click" onclick="toggleBorder('mod8')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Toggle sprinting or sneaking without holding the button</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Size</span>
+                                        <input type="range" class="range" id="sizeInputToSp" min="0" max="4" value="1"
+                                            oninput="sizeAmountToSp.value=sizeInputToSp.value" step="0.05">
+                                        <output id="sizeAmountToSp" for="sizeInputToSp">1</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Force Minecraft Renderer</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click" checked>
+                                        <span>Label</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click" checked>
+                                        <span>Toggle Sprint</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Always Sprint</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Toggle Sneak</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click bgToggle" checked>
+                                        <span>Background</span>
+                                    </div>
+
+                                    <div class="fixedToggle">
+                                        <div class="opt-cont fixed-opt">
+                                            <input type="checkbox" class="click fixed">
+                                            <span>Fixed Size</span>
+                                        </div>
+
+                                        <div class="padopt">
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">Pad X</span>
+                                                <input type="range" class="range" id="padxInputToSp" min="0" max="40"
+                                                    value="22" oninput="padxAmountToSp.value=padxInputToSp.value"
+                                                    step="2">
+                                                <output id="padxAmountToSp" for="padxInputToSp">22</output>
+                                            </div>
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">Pad Y</span>
+                                                <input type="range" class="range" id="padyInputToSp" min="0" max="40"
+                                                    value="4" oninput="padyAmountToSp.value=padyInputToSp.value"
+                                                    step="2">
+                                                <output id="padyAmountToSp" for="padyInputToSp">4</output>
+                                            </div>
+                                        </div>
+
+                                        <div class="bgopt" style="display: none;">
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">BG X</span>
+                                                <input type="range" class="range" id="bgxInputToSp" min="0" max="400"
+                                                    value="150" oninput="bgxAmountToSp.value=bgxInputToSp.value"
+                                                    step="2.5">
+                                                <output id="bgxAmountToSp" for="bgxInputToSp">150</output>
+                                            </div>
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">BG Y</span>
+                                                <input type="range" class="range" id="bgyInputToSp" min="0" max="300"
+                                                    value="45" oninput="bgyAmountToSp.value=bgyInputToSp.value"
+                                                    step="2.5">
+                                                <output id="bgyAmountToSp" for="bgyInputToSp">45</output>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="opt-cont">
+                                        Prefix
+                                        <input type="text" class="opt-input">
+                                    </div>
+                                    <div class="opt-cont">
+                                        Suffix
+                                        <input type="text" class="opt-input">
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Text Size</span>
+                                        <input type="range" class="range" id="txtSizeInputToSp" min="2" max="100"
+                                            value="30" oninput="txtSizeAmountToSp.value=txtSizeInputToSp.value"
+                                            step="2">
+                                        <output id="txtSizeAmountToSp" for="txtSizeInputToSp">30</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay" style="background-color: #ffffff;"></span>
+                                        </span>
+                                        Text
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay"
+                                                style="background-image: linear-gradient(to right, #000000, #00000080);"></span>
+                                        </span>
+                                        Background
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="keybox">Center</span>Alignment
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click outlineToggle">
+                                        <span>Outline</span>
+                                    </div>
+                                    <div class="outlineDisplay" style="display: none;">
+                                        <div class="sldr-cont">
+                                            <span style="padding: 0; margin: 0; display: inline;">Thickness</span>
+                                            <input type="range" class="range" id="outlineThicknessInputToSp" min="0"
+                                                max="20" value="2"
+                                                oninput="outlineThicknessAmountToSp.value=outlineThicknessInputToSp.value"
+                                                step="1">
+                                            <output id="outlineThicknessAmountToSp"
+                                                for="outlineThicknessInputToSp">2</output>
+                                        </div>
+                                        <div class="opt-cont">
+                                            <span class="colorbox">
+                                                <span class="overlay" style="background-color: #ffffff;"></span>
+                                            </span>
+                                            Outline Color
+                                        </div>
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Radius</span>
+                                        <input type="range" class="range" id="radiusInputToSp" min="0" max="10"
+                                            value="0" oninput="radiusAmountToSp.value=radiusInputToSp.value" step="1">
+                                        <output id="radiusAmountToSp" for="radiusInputToSp">0</output>
+                                    </div>
+                                    <div class="preview">
+                                        Preview is displayed here in the actual client
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+                <div class="column c2">
+
+                    <div class="item game" id="mod9">
+                        <div class="item-header">
+                            Behind You
+                            <div class="toggle click" onclick="toggleBorder('mod9')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Bind a perspective to a key!</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">Third Person Front</span>Perspective
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="keybind">G</span>Bind
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item hud" id="mod10">
+                        <div class="item-header">
+                            CPS Counter
+                            <div class="toggle click" onclick="toggleBorder('mod10')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Shows your CPS</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Size</span>
+                                        <input type="range" class="range" id="sizeInputCpCo" min="0" max="4" value="1"
+                                            oninput="sizeAmountCpCo.value=sizeInputCpCo.value" step="0.05">
+                                        <output id="sizeAmountCpCo" for="sizeInputCpCo">1</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Force Minecraft Renderer</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="keybox">Left</span>Mode
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click bgToggle" checked>
+                                        <span>Background</span>
+                                    </div>
+                                    <div class="fixedToggle">
+                                        <div class="opt-cont fixed-opt">
+                                            <input type="checkbox" class="click fixed">
+                                            <span>Fixed Size</span>
+                                        </div>
+                                        <div class="padopt">
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">Pad X</span>
+                                                <input type="range" class="range" id="padxInputCpCo" min="0" max="40"
+                                                    value="22" oninput="padxAmountCpCo.value=padxInputCpCo.value"
+                                                    step="2">
+                                                <output id="padxAmountCpCo" for="padxInputCpCo">22</output>
+                                            </div>
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">Pad Y</span>
+                                                <input type="range" class="range" id="padyInputCpCo" min="0" max="40"
+                                                    value="4" oninput="padyAmountCpCo.value=padyInputCpCo.value"
+                                                    step="2">
+                                                <output id="padyAmountCpCo" for="padyInputCpCo">4</output>
+                                            </div>
+                                        </div>
+
+                                        <div class="bgopt" style="display: none;">
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">BG X</span>
+                                                <input type="range" class="range" id="bgxInputCpCo" min="0" max="400"
+                                                    value="150" oninput="bgxAmountCpCo.value=bgxInputCpCo.value"
+                                                    step="2.5">
+                                                <output id="bgxAmountCpCo" for="bgxInputCpCo">150</output>
+                                            </div>
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">BG Y</span>
+                                                <input type="range" class="range" id="bgyInputCpCo" min="0" max="300"
+                                                    value="45" oninput="bgyAmountCpCo.value=bgyInputCpCo.value"
+                                                    step="2.5">
+                                                <output id="bgyAmountCpCo" for="bgyInputCpCo">45</output>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="opt-cont">
+                                        Prefix
+                                        <input type="text" class="opt-input" value="CPS: ">
+                                    </div>
+                                    <div class="opt-cont">
+                                        Suffix
+                                        <input type="text" class="opt-input">
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Text Size</span>
+                                        <input type="range" class="range" id="txtSizeInputCpCo" min="2" max="100"
+                                            value="30" oninput="txtSizeAmountCpCo.value=txtSizeInputCpCo.value"
+                                            step="2">
+                                        <output id="txtSizeAmountCpCo" for="txtSizeInputCpCo">30</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay" style="background-color: #ffffff;"></span>
+                                        </span>
+                                        Text
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay"
+                                                style="background-image: linear-gradient(to right, #000000, #00000080);"></span>
+                                        </span>
+                                        Background
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="keybox">Center</span>Alignment
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click outlineToggle">
+                                        <span>Outline</span>
+                                    </div>
+                                    <div class="outlineDisplay" style="display: none;">
+                                        <div class="sldr-cont">
+                                            <span style="padding: 0; margin: 0; display: inline;">Thickness</span>
+                                            <input type="range" class="range" id="outlineThicknessInputCpCo" min="0"
+                                                max="20" value="2"
+                                                oninput="outlineThicknessAmountCpCo.value=outlineThicknessInputCpCo.value"
+                                                step="1">
+                                            <output id="outlineThicknessAmountCpCo"
+                                                for="outlineThicknessInputCpCo">2</output>
+                                        </div>
+                                        <div class="opt-cont">
+                                            <span class="colorbox">
+                                                <span class="overlay" style="background-color: #ffffff;"></span>
+                                            </span>
+                                            Outline Color
+                                        </div>
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Radius</span>
+                                        <input type="range" class="range" id="radiusInputCpCo" min="0" max="10"
+                                            value="0" oninput="radiusAmountCpCo.value=radiusInputCpCo.value" step="1">
+                                        <output id="radiusAmountCpCo" for="radiusInputCpCo">0</output>
+                                    </div>
+                                    <div class="preview">
+                                        Preview is displayed here in the actual client
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item hud" id="mod26">
+                        <div class="item-header">
+                            Movable Scoreboard
+                            <div class="toggle click" onclick="toggleBorder('mod26')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Be able to move the scoreboard.</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Force Minecraft Renderer</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item game" id="mod11">
+                        <div class="item-header">
+                            Motion Blur
+                            <div class="toggle click" onclick="toggleBorder('mod11')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Blurs motion</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Intensity</span>
+                                        <input type="range" class="range" id="intensityInputMoBl" min="0" max="10"
+                                            value="7" oninput="intensityAmountMoBl.value=intensityInputMoBl.value"
+                                            step="1">
+                                        <output id="intensityAmountMoBl" for="intensityInputMoBl">7</output>
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Anti Bleed</span>
+                                        <input type="range" class="range" id="antibleedInputMoBl" min="0" max="1"
+                                            value="0.3" oninput="antibleedAmountMoBl.value=antibleedInputMoBl.value"
+                                            step="0.1">
+                                        <output id="antibleedAmountMoBl" for="antibleedInputMoBl">0.3</output>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item hud" id="mod12">
+                        <div class="item-header">
+                            Clock
+                            <div class="toggle click" onclick="toggleBorder('mod12')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Shows the current time.</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Size</span>
+                                        <input type="range" class="range" id="sizeInputCl" min="0" max="4" value="1"
+                                            oninput="sizeAmountCl.value=sizeInputCl.value" step="0.05">
+                                        <output id="sizeAmountCl" for="sizeInputCl">1</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Force Minecraft Renderer</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>24-hour time</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Show date</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click bgToggle" checked>
+                                        <span>Background</span>
+                                    </div>
+                                    <div class="fixedToggle">
+                                        <div class="opt-cont fixed-opt">
+                                            <input type="checkbox" class="click fixed">
+                                            <span>Fixed Size</span>
+                                        </div>
+                                        <div class="padopt">
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">Pad X</span>
+                                                <input type="range" class="range" id="padxInputCl" min="0" max="40"
+                                                    value="22" oninput="padxAmountCl.value=padxInputCl.value" step="2">
+                                                <output id="padxAmountCl" for="padxInputCl">22</output>
+                                            </div>
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">Pad Y</span>
+                                                <input type="range" class="range" id="padyInputCl" min="0" max="40"
+                                                    value="4" oninput="padyAmountCl.value=padyInputCl.value" step="2">
+                                                <output id="padyAmountCl" for="padyInputCl">4</output>
+                                            </div>
+                                        </div>
+
+                                        <div class="bgopt" style="display: none;">
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">BG X</span>
+                                                <input type="range" class="range" id="bgxInputCl" min="0" max="400"
+                                                    value="150" oninput="bgxAmountCl.value=bgxInputCl.value" step="2.5">
+                                                <output id="bgxAmountCl" for="bgxInputCl">150</output>
+                                            </div>
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">BG Y</span>
+                                                <input type="range" class="range" id="bgyInputCl" min="0" max="300"
+                                                    value="45" oninput="bgyAmountCl.value=bgyInputCl.value" step="2.5">
+                                                <output id="bgyAmountCl" for="bgyInputCl">45</output>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="opt-cont">
+                                        Prefix
+                                        <input type="text" class="opt-input">
+                                    </div>
+                                    <div class="opt-cont">
+                                        Suffix
+                                        <input type="text" class="opt-input">
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Text Size</span>
+                                        <input type="range" class="range" id="txtSizeInputCl" min="2" max="100"
+                                            value="30" oninput="txtSizeAmountCl.value=txtSizeInputCl.value" step="2">
+                                        <output id="txtSizeAmountCl" for="txtSizeInputCl">30</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay" style="background-color: #ffffff;"></span>
+                                        </span>
+                                        Text
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay"
+                                                style="background-image: linear-gradient(to right, #000000, #00000080);"></span>
+                                        </span>
+                                        Background
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="keybox">Center</span>Alignment
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click outlineToggle">
+                                        <span>Outline</span>
+                                    </div>
+                                    <div class="outlineDisplay" style="display: none;">
+                                        <div class="sldr-cont">
+                                            <span style="padding: 0; margin: 0; display: inline;">Thickness</span>
+                                            <input type="range" class="range" id="outlineThicknessInputCl" min="0"
+                                                max="20" value="2"
+                                                oninput="outlineThicknessAmountCl.value=outlineThicknessInputCl.value"
+                                                step="1">
+                                            <output id="outlineThicknessAmountCl"
+                                                for="outlineThicknessInputCl">2</output>
+                                        </div>
+                                        <div class="opt-cont">
+                                            <span class="colorbox">
+                                                <span class="overlay" style="background-color: #ffffff;"></span>
+                                            </span>
+                                            Outline Color
+                                        </div>
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Radius</span>
+                                        <input type="range" class="range" id="radiusInputCl" min="0" max="10" value="0"
+                                            oninput="radiusAmountCl.value=radiusInputCl.value" step="1">
+                                        <output id="radiusAmountCl" for="radiusInputCl">0</output>
+                                    </div>
+                                    <div class="preview">
+                                        Preview is displayed here in the actual client
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item" id="mod13">
+                        <div class="item-header">
+                            GUI Scale Changer
+                            <div class="toggle click" onclick="toggleBorder('mod13')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Change the scale of the Minecraft GUI</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Guiscale</span>
+                                        <input type="range" class="range" id="guiscaleInputGuSc" min="0.5" max="5"
+                                            value="2" oninput="guiscaleAmountGuSc.value=guiscaleInputGuSc.value"
+                                            step="0.5">
+                                        <output id="guiscaleAmountGuSc" for="guiscaleInputGuSc">2</output>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item game" id="mod14">
+                        <div class="item-header">
+                            Java Debug Info
+                            <div class="toggle click" onclick="toggleBorder('mod14')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>See information similar to Java</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybind">F3</span>Key
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item hud" id="mod23">
+                        <div class="item-header">
+                            Ping Display
+                            <div class="toggle click" onclick="toggleBorder('mod23')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Displays the ping of the server you're connected to</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Size</span>
+                                        <input type="range" class="range" id="sizeInputPi" min="0" max="4" value="1"
+                                            oninput="sizeAmountPi.value=sizeInputPi.value" step="0.05">
+                                        <output id="sizeAmountPi" for="sizeInputPi">1</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Force Minecraft Renderer</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click bgToggle" checked>
+                                        <span>Background</span>
+                                    </div>
+                                    <div class="fixedToggle">
+                                        <div class="opt-cont fixed-opt">
+                                            <input type="checkbox" class="click fixed">
+                                            <span>Fixed Size</span>
+                                        </div>
+                                        <div class="padopt">
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">Pad X</span>
+                                                <input type="range" class="range" id="padxInputPi" min="0" max="40"
+                                                    value="22" oninput="padxAmountPi.value=padxInputPi.value" step="2">
+                                                <output id="padxAmountPi" for="padxInputPi">22</output>
+                                            </div>
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">Pad Y</span>
+                                                <input type="range" class="range" id="padyInputPi" min="0" max="40"
+                                                    value="4" oninput="padyAmountPi.value=padyInputPi.value" step="2">
+                                                <output id="padyAmountPi" for="padyInputPi">4</output>
+                                            </div>
+                                        </div>
+
+                                        <div class="bgopt" style="display: none;">
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">BG X</span>
+                                                <input type="range" class="range" id="bgxInputPi" min="0" max="400"
+                                                    value="150" oninput="bgxAmountPi.value=bgxInputPi.value" step="2.5">
+                                                <output id="bgxAmountPi" for="bgxInputPi">150</output>
+                                            </div>
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">BG Y</span>
+                                                <input type="range" class="range" id="bgyInputPi" min="0" max="300"
+                                                    value="45" oninput="bgyAmountPi.value=bgyInputPi.value" step="2.5">
+                                                <output id="bgyAmountPi" for="bgyInputPi">45</output>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="opt-cont">
+                                        Prefix
+                                        <input type="text" class="opt-input">
+                                    </div>
+                                    <div class="opt-cont">
+                                        Suffix
+                                        <input type="text" class="opt-input" value=" MS">
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Text Size</span>
+                                        <input type="range" class="range" id="txtSizeInputPi" min="2" max="100"
+                                            value="30" oninput="txtSizeAmountPi.value=txtSizeInputPi.value" step="2">
+                                        <output id="txtSizeAmountPi" for="txtSizeInputPi">30</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay" style="background-color: #ffffff;"></span>
+                                        </span>
+                                        Text
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay"
+                                                style="background-image: linear-gradient(to right, #000000, #00000080);"></span>
+                                        </span>
+                                        Background
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="keybox">Center</span>Alignment
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click outlineToggle">
+                                        <span>Outline</span>
+                                    </div>
+                                    <div class="outlineDisplay" style="display: none;">
+                                        <div class="sldr-cont">
+                                            <span style="padding: 0; margin: 0; display: inline;">Thickness</span>
+                                            <input type="range" class="range" id="outlineThicknessInputPi" min="0"
+                                                max="20" value="2"
+                                                oninput="outlineThicknessAmountPi.value=outlineThicknessInputPi.value"
+                                                step="1">
+                                            <output id="outlineThicknessAmountPi"
+                                                for="outlineThicknessInputPi">2</output>
+                                        </div>
+                                        <div class="opt-cont">
+                                            <span class="colorbox">
+                                                <span class="overlay" style="background-color: #ffffff;"></span>
+                                            </span>
+                                            Outline Color
+                                        </div>
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Radius</span>
+                                        <input type="range" class="range" id="radiusInputPi" min="0" max="10" value="0"
+                                            oninput="radiusAmountPi.value=radiusInputPi.value" step="1">
+                                        <output id="radiusAmountPi" for="radiusInputPi">0</output>
+                                    </div>
+                                    <div class="preview">
+                                        Preview is displayed here in the actual client
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item" id="mod21">
+                        <div class="item-header">
+                            Health Warning
+                            <div class="toggle click" onclick="toggleBorder('mod21')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Give the screen a vignette when your health is low.</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay"
+                                                style="background-image: linear-gradient(to right, #FF0000, #FF000033);"></span>
+                                        </span>
+                                        Vignette
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Health</span>
+                                        <input type="range" class="range" id="healthInputHeWa" min="1" max="19"
+                                            value="6" oninput="healthAmountHeWa.value=healthInputHeWa.value" step="0.5">
+                                        <output id="healthAmountHeWa" for="healthInputHeWa">6</output>
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Intensity</span>
+                                        <input type="range" class="range" id="intensityInputHeWa" min="0" max="1"
+                                            value="0" oninput="intensityAmountHeWa.value=intensityInputHeWa.value"
+                                            step="0.1">
+                                        <output id="intensityAmountHeWa" for="intensityInputHeWa">0</output>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+                <div class="column c3">
+
+                    <div class="item hud" id="mod17">
+                        <div class="item-header">
+                            Bow Indicator
+                            <div class="toggle click" onclick="toggleBorder('mod17')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Shows bow chargedness</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Size</span>
+                                        <input type="range" class="range" id="sizeInput2" min="0" max="4" value="1"
+                                            oninput="sizeAmount2.value=sizeInput2.value" step="0.05">
+                                        <output id="sizeAmount2" for="sizeInput2">1</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Force Minecraft Renderer</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click viToggle">
+                                        <span>Visual Indicator</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay" style="background-color: #1A991A;"></span>
+                                        </span>
+                                        Color
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay"
+                                                style="background-image: linear-gradient(to right, #1A1A1A, #1A1A1A60);"></span>
+                                        </span>
+                                        Background Color
+                                    </div>
+                                    <div class="viDisplayToggle" style="display: none;">
+                                        <div class="opt-cont">
+                                            <input type="checkbox" class="click viToggle">
+                                            <span>Horizontal</span>
+                                        </div>
+                                        <div class="opt-cont">
+                                            <input type="checkbox" class="click viToggle">
+                                            <span>Hide when charged</span>
+                                        </div>
+
+                                        <div class="sldr-cont">
+                                            <span style="padding: 0; margin: 0; display: inline;">Length</span>
+                                            <input type="range" class="range" id="lengthInputBoIn" min="0" max="200"
+                                                value="120" oninput="lengthAmountBoIn.value=lengthInputBoIn.value"
+                                                step="2.5">
+                                            <output id="lengthAmountBoIn" for="lengthInputBoIn">120</output>
+                                        </div>
+
+                                        <div class="sldr-cont">
+                                            <span style="padding: 0; margin: 0; display: inline;">Width</span>
+                                            <input type="range" class="range" id="widthInputBoIn" min="0" max="200"
+                                                value="30" oninput="widthAmountBoIn.value=widthInputBoIn.value"
+                                                step="2.5">
+                                            <output id="widthAmountBoIn" for="widthInputBoIn">30</output>
+                                        </div>
+
+                                        <div class="sldr-cont">
+                                            <span style="padding: 0; margin: 0; display: inline;">Radius</span>
+                                            <input type="range" class="range" id="radiusviInputBoIn" min="0" max="5"
+                                                value="0" oninput="radiusviAmountBoIn.value=radiusviInputBoIn.value"
+                                                step="1">
+                                            <output id="radiusviAmountBoIn" for="radiusviInputBoIn">0</output>
+                                        </div>
+
+                                        <div class="sldr-cont">
+                                            <span style="padding: 0; margin: 0; display: inline;">Padding</span>
+                                            <input type="range" class="range" id="paddingInputBoIn" min="0" max="20"
+                                                value="6" oninput="paddingAmountBoIn.value=paddingInputBoIn.value"
+                                                step="1">
+                                            <output id="paddingAmountBoIn" for="paddingInputBoIn">6</output>
+                                        </div>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click bgToggle" checked>
+                                        <span>Background</span>
+                                    </div>
+
+                                    <div class="fixedToggle">
+                                        <div class="opt-cont fixed-opt">
+                                            <input type="checkbox" class="click fixed">
+                                            <span>Fixed Size</span>
+                                        </div>
+
+                                        <div class="padopt">
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">Pad X</span>
+                                                <input type="range" class="range" id="padxInput" min="0" max="40"
+                                                    value="22" oninput="padxAmount.value=padxInput.value" step="2">
+                                                <output id="padxAmount" for="padxInput">22</output>
+                                            </div>
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">Pad Y</span>
+                                                <input type="range" class="range" id="padyInput" min="0" max="40"
+                                                    value="4" oninput="padyAmount.value=padyInput.value" step="2">
+                                                <output id="padyAmount" for="padyInput">4</output>
+                                            </div>
+                                        </div>
+
+                                        <div class="bgopt" style="display: none;">
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">BG X</span>
+                                                <input type="range" class="range" id="bgxInput" min="0" max="400"
+                                                    value="150" oninput="bgxAmount.value=bgxInput.value" step="2.5">
+                                                <output id="bgxAmount" for="bgxInput">150</output>
+                                            </div>
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">BG Y</span>
+                                                <input type="range" class="range" id="bgyInput" min="0" max="300"
+                                                    value="45" oninput="bgyAmount.value=bgyInput.value" step="2.5">
+                                                <output id="bgyAmount" for="bgyInput">45</output>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="opt-cont">
+                                        Prefix
+                                        <input type="text" class="opt-input">
+                                    </div>
+                                    <div class="opt-cont">
+                                        Suffix
+                                        <input type="text" class="opt-input">
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Text Size</span>
+                                        <input type="range" class="range" id="txtSizeInput" min="2" max="100" value="30"
+                                            oninput="txtSizeAmount.value=txtSizeInput.value" step="2">
+                                        <output id="txtSizeAmount" for="txtSizeInput">30</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay" style="background-color: #ffffff;"></span>
+                                        </span>
+                                        Text
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay"
+                                                style="background-image: linear-gradient(to right, #000000, #00000080);"></span>
+                                        </span>
+                                        Background
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="keybox">Center</span>Alignment
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click outlineToggle">
+                                        <span>Outline</span>
+                                    </div>
+                                    <div class="outlineDisplay" style="display: none;">
+                                        <div class="sldr-cont">
+                                            <span style="padding: 0; margin: 0; display: inline;">Thickness</span>
+                                            <input type="range" class="range" id="outlineThicknessInput" min="0"
+                                                max="20" value="2"
+                                                oninput="outlineThicknessAmount.value=outlineThicknessInput.value"
+                                                step="1">
+                                            <output id="outlineThicknessAmount" for="outlineThicknessInput">2</output>
+                                        </div>
+                                        <div class="opt-cont">
+                                            <span class="colorbox">
+                                                <span class="overlay" style="background-color: #ffffff;"></span>
+                                            </span>
+                                            Outline Color
+                                        </div>
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Radius</span>
+                                        <input type="range" class="range" id="radiusInput" min="0" max="10" value="0"
+                                            oninput="radiusAmount.value=radiusInput.value" step="1">
+                                        <output id="radiusAmount" for="radiusInput">0</output>
+                                    </div>
+                                    <div class="preview">
+                                        Preview is displayed here in the actual client
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item game" id="mod16">
+                        <div class="item-header">
+                            Zoom
+                            <div class="toggle click" onclick="toggleBorder('mod16')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Zooms like OptiFine</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybind">C</span>Zoom Key
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Modifier</span>
+                                        <input type="range" class="range" id="modifierInputZo" min="1" max="50"
+                                            value="15" oninput="modifierAmountZo.value=modifierInputZo.value" step="1">
+                                        <output id="modifierAmountZo" for="modifierInputZo">15</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Animation</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click" checked>
+                                        <span>Cinematic Camera</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click" checked>
+                                        <span>Hide Hand</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click" checked>
+                                        <span>Adjust DPI</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item game" id="mod18">
+                        <div class="item-header">
+                            Hitboxes
+                            <div class="toggle click" onclick="toggleBorder('mod18')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Shows entity bounding boxes.</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click" checked>
+                                        <span>Transparent</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay" style="background-color: #ffffff;"></span>
+                                        </span>
+                                        Box
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click eyeLineCheck" checked>
+                                        <span>Show Eye Line</span>
+                                    </div>
+                                    <div class="opt-cont eyeLineDisplay">
+                                        <span class="colorbox">
+                                            <span class="overlay" style="background-color: #ff0000;"></span>
+                                        </span>
+                                        Eye Line
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click lookingAtCheck" checked>
+                                        <span>Show Looking At</span>
+                                    </div>
+                                    <div class="opt-cont lookingAtDisplay">
+                                        <span class="colorbox">
+                                            <span class="overlay" style="background-color: #0000ff;"></span>
+                                        </span>
+                                        Looking At
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click" checked>
+                                        <span>Items</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item game" id="mod19">
+                        <div class="item-header">
+                            Chunk Borders
+                            <div class="toggle click" onclick="toggleBorder('mod19')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Show chunk borders near you.</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click" checked>
+                                        <span>Transparent</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item hud" id="mod20">
+                        <div class="item-header">
+                            FPS Counter
+                            <div class="toggle click" onclick="toggleBorder('mod20')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Shows your FPS.</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Size</span>
+                                        <input type="range" class="range" id="sizeInputFpCo" min="0" max="4" value="1"
+                                            oninput="sizeAmountFpCo.value=sizeInputFpCo.value" step="0.05">
+                                        <output id="sizeAmountFpCo" for="sizeInputFpCo">1</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Force Minecraft Renderer</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click bgToggle" checked>
+                                        <span>Background</span>
+                                    </div>
+                                    <div class="fixedToggle">
+                                        <div class="opt-cont fixed-opt">
+                                            <input type="checkbox" class="click fixed">
+                                            <span>Fixed Size</span>
+                                        </div>
+                                        <div class="padopt">
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">Pad X</span>
+                                                <input type="range" class="range" id="padxInputFpCo" min="0" max="40"
+                                                    value="22" oninput="padxAmountFpCo.value=padxInputFpCo.value"
+                                                    step="2">
+                                                <output id="padxAmountFpCo" for="padxInputFpCo">22</output>
+                                            </div>
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">Pad Y</span>
+                                                <input type="range" class="range" id="padyInputFpCo" min="0" max="40"
+                                                    value="4" oninput="padyAmountFpCo.value=padyInputFpCo.value"
+                                                    step="2">
+                                                <output id="padyAmountFpCo" for="padyInputFpCo">4</output>
+                                            </div>
+                                        </div>
+
+                                        <div class="bgopt" style="display: none;">
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">BG X</span>
+                                                <input type="range" class="range" id="bgxInputFpCo" min="0" max="400"
+                                                    value="150" oninput="bgxAmountFpCo.value=bgxInputFpCo.value"
+                                                    step="2.5">
+                                                <output id="bgxAmountFpCo" for="bgxInputFpCo">150</output>
+                                            </div>
+                                            <div class="sldr-cont">
+                                                <span style="padding: 0; margin: 0; display: inline;">BG Y</span>
+                                                <input type="range" class="range" id="bgyInputFpCo" min="0" max="300"
+                                                    value="45" oninput="bgyAmountFpCo.value=bgyInputFpCo.value"
+                                                    step="2.5">
+                                                <output id="bgyAmountFpCo" for="bgyInputFpCo">45</output>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="opt-cont">
+                                        Prefix
+                                        <input type="text" class="opt-input" value="FPS: ">
+                                    </div>
+                                    <div class="opt-cont">
+                                        Suffix
+                                        <input type="text" class="opt-input">
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Text Size</span>
+                                        <input type="range" class="range" id="txtSizeInputFpCo" min="2" max="100"
+                                            value="30" oninput="txtSizeAmountFpCo.value=txtSizeInputFpCo.value"
+                                            step="2">
+                                        <output id="txtSizeAmountFpCo" for="txtSizeInputFpCo">30</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay" style="background-color: #ffffff;"></span>
+                                        </span>
+                                        Text
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay"
+                                                style="background-image: linear-gradient(to right, #000000, #00000080);"></span>
+                                        </span>
+                                        Background
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="keybox">Center</span>Alignment
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click outlineToggle">
+                                        <span>Outline</span>
+                                    </div>
+                                    <div class="outlineDisplay" style="display: none;">
+                                        <div class="sldr-cont">
+                                            <span style="padding: 0; margin: 0; display: inline;">Thickness</span>
+                                            <input type="range" class="range" id="outlineThicknessInputFpCo" min="0"
+                                                max="20" value="2"
+                                                oninput="outlineThicknessAmountFpCo.value=outlineThicknessInputFpCo.value"
+                                                step="1">
+                                            <output id="outlineThicknessAmountFpCo"
+                                                for="outlineThicknessInputFpCo">2</output>
+                                        </div>
+                                        <div class="opt-cont">
+                                            <span class="colorbox">
+                                                <span class="overlay" style="background-color: #ffffff;"></span>
+                                            </span>
+                                            Outline Color
+                                        </div>
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Radius</span>
+                                        <input type="range" class="range" id="radiusInputFpCo" min="0" max="10"
+                                            value="0" oninput="radiusAmountFpCo.value=radiusInputFpCo.value" step="1">
+                                        <output id="radiusAmountFpCo" for="radiusInputFpCo">0</output>
+                                    </div>
+                                    <div class="preview">
+                                        Preview is displayed here in the actual client
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item hud" id="mod22">
+                        <div class="item-header">
+                            Keystrokes
+                            <div class="toggle click" onclick="toggleBorder('mod22')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Shows movement keys</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Size</span>
+                                        <input type="range" class="range" id="sizeInputKe" min="0" max="4" value="1"
+                                            oninput="sizeAmountKe.value=sizeInputKe.value" step="0.05">
+                                        <output id="sizeAmountKe" for="sizeInputKe">1</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Force Minecraft Renderer</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Mouse Buttons</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click" checked>
+                                        <span>CPS</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click" checked>
+                                        <span>Space Bar</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click keystrokeBorderChecks">
+                                        <span>Border</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Sneak Key</span>
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Radius</span>
+                                        <input type="range" class="range" id="radiusInputKe" min="0" max="10"
+                                            value="0" oninput="radiusAmountKe.value=radiusInputKe.value" step="1">
+                                        <output id="radiusAmountKe" for="radiusInputKe">0</output>
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Text Size</span>
+                                        <input type="range" class="range" id="textsizeInputKe" min="2" max="40"
+                                            value="23" oninput="textsizeAmountKe.value=textsizeInputKe.value" step="0.2">
+                                        <output id="textsizeAmountKe" for="textsizeInputKe">23</output>
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Key Size</span>
+                                        <input type="range" class="range" id="keysizeInputKe" min="16" max="90"
+                                            value="60" oninput="keysizeAmountKe.value=keysizeInputKe.value" step="2">
+                                        <output id="keysizeAmountKe" for="keysizeInputKe">60</output>
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Space Bar</span>
+                                        <input type="range" class="range" id="spacebarInputKe" min="0" max="90"
+                                            value="30" oninput="spacebarAmountKe.value=spacebarInputKe.value" step="2">
+                                        <output id="spacebarAmountKe" for="spacebarInputKe">30</output>
+                                    </div>
+                                    <div class="sldr-cont mbht-sldr">
+                                        <span class="mbht" style="padding: 0; margin: 0; display: inline; line-height: 1.3;">Mouse<br>Button<br>Height</span>
+                                        <input type="range" class="range" id="mbhInputKe" min="0" max="90"
+                                            value="30" oninput="mbhAmountKe.value=mbhInputKe.value" step="2">
+                                        <output id="mbhAmountKe" for="mbhInputKe">30</output>
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Padding</span>
+                                        <input type="range" class="range" id="spacebarInputKe" min="0" max="6"
+                                            value="3" oninput="spacebarAmountKe.value=spacebarInputKe.value" step="0.25">
+                                        <output id="spacebarAmountKe" for="spacebarInputKe">3</output>
+                                    </div>
+                                    <div class="sldr-cont brdr-sldr keystrokeBorderDisplay" style="display: none;">
+                                        <span class="brdr" style="padding: 0; margin: 0; display: inline; line-height: 1.3;">Border<br>Length</span>
+                                        <input type="range" class="range" id="brdrInputKe" min="0" max="6"
+                                            value="2" oninput="brdrAmountKe.value=brdrInputKe.value" step="0.25">
+                                        <output id="brdrAmountKe" for="brdrInputKe">2</output>
+                                    </div>
+                                    <div class="sldr-cont mbht-sldr">
+                                        <span class="mbht" style="padding: 0; margin: 0; display: inline; line-height: 1.3;">Transition<br>(0&nbsp;=&nbsp;No<br>Transition</span>
+                                        <input type="range" class="range" id="transitionInputKe" min="0" max="3"
+                                            value="0.1" oninput="transitionAmountKe.value=transitionInputKe.value" step="0.05">
+                                        <output id="transitionAmountKe" for="transitionInputKe">0.1</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay"
+                                                style="background-image: linear-gradient(to right, #ffffff, #ffffff80);"></span>
+                                        </span>
+                                        Border Color
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay"
+                                                style="background-image: linear-gradient(to right, #ffffff, #ffffff80);"></span>
+                                        </span>
+                                        Pressed Color
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay"
+                                                style="background-image: linear-gradient(to right, #000000, #00000080);"></span>
+                                        </span>
+                                        Unpressed Color
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay"
+                                                style="background-color: #000000;"></span>
+                                        </span>
+                                        Pressed Text Color
+                                    </div>
+                                    <div class="opt-cont">
+                                        <span class="colorbox">
+                                            <span class="overlay"
+                                                style="background-color: #ffffff;"></span>
+                                        </span>
+                                        Unpressed Text Color
+                                    </div>
+                                    <div class="preview">
+                                        Preview is displayed here in the actual client
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="item hud" id="mod15">
+                        <div class="item-header">
+                            Movable Paperdoll
+                            <div class="toggle click" onclick="toggleBorder('mod15')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Be able to move around the paper doll!</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Size</span>
+                                        <input type="range" class="range" id="sizeInputMoPa" min="0" max="4" value="1"
+                                            oninput="sizeAmountMoPa.value=sizeInputMoPa.value" step="0.05">
+                                        <output id="sizeAmountMoPa" for="sizeInputMoPa">1</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Force Minecraft Renderer</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Always Show</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item" id="mod7">
+                        <div class="item-header">
+                            Player List
+                            <div class="toggle click" onclick="toggleBorder('mod7')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Shows the player list.</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="opt-cont">
+                                    <span class="keybind">Tab</span>Key
+                                </div>
+                                <div class="opt-cont">
+                                    <span class="colorbox">
+                                        <span class="overlay" style="background-color: #ffffff;"></span>
+                                    </span>
+                                    Text
+                                </div>
+                                <div class="opt-cont">
+                                    <span class="colorbox">
+                                        <span class="overlay"
+                                            style="background-image: linear-gradient(to right, #000000, #00000080);"></span>
+                                    </span>
+                                    Background
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./app.js"></script>
+
+</html>
