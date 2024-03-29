@@ -17,7 +17,7 @@
 
 @font-face {
     font-family: SegoeUI;
-    src: url(fonts/segui-semibold.ttf) format('woff2');
+    src: url(fonts/SegoeUI-SemiBold.woff2) format('woff2');
     font-weight: 300;
     font-style: normal;
 }
