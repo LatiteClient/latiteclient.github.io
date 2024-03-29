@@ -16,7 +16,7 @@
 
 @font-face {
     font-family: SegoeUI;
-    src: url(fonts/SegoeUI-SemiBold.woff2) format('woff2');
+    src: url(../fonts/SegoeUI-SemiBold.woff2) format('woff2');
     font-weight: 300;
     font-style: normal;
 }
@@ -560,6 +560,7 @@ input[type=checkbox]:checked::after {
     font-size: 11px;
     background-color: #ffffff00;
     color: #B9B9B9;
+    font-weight: 400;
 }
 
 .searchicon {
@@ -572,14 +573,19 @@ input[type=checkbox]:checked::after {
     color: #B9B9B9;
     opacity: 1;
     font-size: 11px;
-    font-weight: 200;
+    font-weight: 300;
+}
 
+::-webkit-input-placeholder {
+    color: #B9B9B9;
+    font-size: 11px;
+    font-weight: 200;
 }
 
 ::-ms-input-placeholder {
     font-size: 11px;
     color: #B9B9B9;
-    font-weight: 200;
+    font-weight: 300;
 }
 
 .modules::-webkit-scrollbar {
@@ -714,6 +720,7 @@ input[type=checkbox]:checked::after {
 
 .opt-input {
     width: 120px;
+    font-weight: 200;
     height: 16px;
     background-color: #D9D9D919;
     border-radius: 2.5px;
@@ -837,7 +844,7 @@ input[type=checkbox]:checked::after {
 .column {
     width: calc(100% / 3 - 10px);
     height: fit-content;
-    padding-bottom: 300px;
+    padding-bottom: 100px;
 }
 
 /* .mod {

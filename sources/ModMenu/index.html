@@ -746,6 +746,54 @@
                         </div>
                     </div>
 
+                    <div class="item hud" id="mod33">
+                        <div class="item-header">
+                            Movable Bossbar
+                            <div class="toggle click" onclick="toggleBorder('mod33')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Be able to the bossbar!</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Force Minecraft Renderer</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item game" id="mod30">
+                        <div class="item-header">
+                            Third Person Nametag
+                            <div class="toggle click" onclick="toggleBorder('mod30')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Shows your nametag in third person.</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="item hud" id="mod8">
                         <div class="item-header">
                             Toggle Sprint/Sneak
@@ -1275,7 +1323,7 @@
                         </div>
                     </div>
 
-                    <div class="item" id="mod13">
+                    <div class="item hud" id="mod13">
                         <div class="item-header">
                             GUI Scale Changer
                             <div class="toggle click" onclick="toggleBorder('mod13')">
@@ -1323,10 +1371,10 @@
                         </div>
                     </div>
 
-                    <div class="item hud" id="mod23">
+                    <div class="item hud" id="mod31">
                         <div class="item-header">
                             Ping Display
-                            <div class="toggle click" onclick="toggleBorder('mod23')">
+                            <div class="toggle click" onclick="toggleBorder('mod31')">
                                 <div class="handle"></div>
                             </div>
                         </div>
@@ -1448,6 +1496,54 @@
                                     </div>
                                     <div class="preview">
                                         Preview is displayed here in the actual client
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item game" id="mod32">
+                        <div class="item-header">
+                            Command Shortcuts
+                            <div class="toggle click" onclick="toggleBorder('mod32')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Sortcuts for commands like /gmc, /gms, etc.</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item game" id="mod23">
+                        <div class="item-header">
+                            Nickname
+                            <div class="toggle click" onclick="toggleBorder('mod23')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Sets your nickname in the chat.</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                    <div class="opt-cont">
+                                        Nickname
+                                        <input type="text" class="opt-input" value="Nickname">
                                     </div>
                                 </div>
                             </div>
@@ -1696,6 +1792,108 @@
                         </div>
                     </div>
 
+                    <div class="item game" id="mod27">
+                        <div class="item-header">
+                            Environment Changer
+                            <div class="toggle click" onclick="toggleBorder('mod27')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Changes visual features in the environment.</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click eyeLineCheck" checked>
+                                        <span>Set Fog Color</span>
+                                    </div>
+                                    <div class="opt-cont eyeLineDisplay">
+                                        <span class="colorbox">
+                                            <span class="overlay" style="background-color: #ff0000;"></span>
+                                        </span>
+                                        Fog Color
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click timeCheck">
+                                        <span>Set Time</span>
+                                    </div>
+                                    <div class="sldr-cont timeDisplay" style="display: none;">
+                                        <span style="padding: 0; margin: 0; display: inline;">Time</span>
+                                        <input type="range" class="range" id="timeInput2" min="0" max="1" value="0"
+                                            oninput="timeAmount2.value=timeInput2.value" step="0.01">
+                                        <output id="timeAmount2" for="timeInput2">1</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click" checked>
+                                        <span>Show Weather</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item hud" id="mod28">
+                        <div class="item-header">
+                            Item Counter
+                            <div class="toggle click" onclick="toggleBorder('mod28')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Counts certain items in your inventory.</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybox">None</span>Key
+                                    </div>
+                                    <div class="sldr-cont">
+                                        <span style="padding: 0; margin: 0; display: inline;">Size</span>
+                                        <input type="range" class="range" id="sizeInputIt" min="0" max="4" value="1"
+                                            oninput="sizeAmountIt.value=sizeInputIt.value" step="0.05">
+                                        <output id="sizeAmountIt" for="sizeInputIt">1</output>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Force Minecraft Renderer</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click" checked>
+                                        <span>Always Show</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click" checked>
+                                        <span>Potions</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click" checked>
+                                        <span>Arrows</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Crystals</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>Totems</span>
+                                    </div>
+                                    <div class="opt-cont">
+                                        <input type="checkbox" class="click">
+                                        <span>XP Bottles</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="item game" id="mod16">
                         <div class="item-header">
                             Zoom
@@ -1734,6 +1932,28 @@
                                     <div class="opt-cont">
                                         <input type="checkbox" class="click" checked>
                                         <span>Adjust DPI</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item game" id="mod29">
+                        <div class="item-header">
+                            Screenshot
+                            <div class="toggle click" onclick="toggleBorder('mod29')">
+                                <div class="handle"></div>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-body-content">
+                                <div class="mod-desc">
+                                    <p>Take a screenshot with a key.</p>
+                                    <span class="click">Reset</span>
+                                </div>
+                                <div class="mod-options">
+                                    <div class="opt-cont">
+                                        <span class="keybind">F2</span>Screenshot Key
                                     </div>
                                 </div>
                             </div>

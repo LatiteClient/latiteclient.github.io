@@ -1672,9 +1672,9 @@ p.disclaimer span.disclaimer-btn, #explanation {
     padding: 17px 45px;
     border-radius: 10px;
     outline: none;
-    border: none;
-    background-color: #ffffff;
-    color: #4d56fe;
+    color: #ffffff;
+    background-color: #00000000;
+    border: solid 3px #ffffff;
     font-family: "Jost", sans-serif;
     font-weight: 500;
     letter-spacing: 3px;
@@ -1692,8 +1692,8 @@ p.disclaimer span.disclaimer-btn, #explanation {
 
 .atlasdownload:hover {
     box-shadow: 0 8px 20px #00000048;
-    background-color: #6070fd;
-    color: #ffffff;
+    color: #4d56fe;
+    background-color: #ffffff;
 }
 
 .fa-brands.fa-android {

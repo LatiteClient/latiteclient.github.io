@@ -200,6 +200,23 @@ lookingAtChecks.forEach((lookingAtCheck) => {
     });
 });
 
+const timeChecks = document.querySelectorAll(".timeCheck");
+
+timeChecks.forEach((timeCheck) => {
+    timeCheck.addEventListener("click", (event) => {
+        timeCheck.classList.toggle("timeToggleDisplay");
+
+        const parentModule = timeCheck.closest(".item");
+        const timeDisplay = parentModule.querySelector(".timeDisplay");
+
+        if (timeCheck.classList.contains("timeToggleDisplay")) {
+            timeDisplay.style.display = "flex";
+        } else {
+            timeDisplay.style.display = "none";
+        }
+    });
+});
+
 function toggleBorder(modId) {
     var mod = document.getElementById(modId);
     var toggle = mod.querySelector(".toggle");
