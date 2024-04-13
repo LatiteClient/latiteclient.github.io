@@ -137,15 +137,19 @@ body {
     width: 100%;
     z-index: 3000;
     position: fixed;
-    padding: 20px;
+    padding: 15px 15px 0 15px;
+    transition: padding 0.4s cubic-bezier(.5,5.02,.59,1);
     /* overflow: hidden; */
 }
 
+.navcontainer:hover {
+    padding: 20px 20px 0 20px;
+}
 
 nav {
     display: flex;
     /* background: #080808d8; */
-    background-color: #0e0e0e;
+    background-color: #070707;
     border: solid 1px #ffffff0a;
     border-radius: var(--global-radius);
     align-items: center;
@@ -153,10 +157,15 @@ nav {
     padding: 0 1em;
     flex-wrap: wrap;
     opacity: 0;
-    transition: all 2s ease;
+    /* transition: all 2s ease; */
+    transition: height 0.4s cubic-bezier(.5,5.02,.59,1);
     position: relative;
     width: 100%;
     animation: brand 0.7s ease 0.4s forwards;
+    height: 4em;
+}
+
+nav:hover {
     height: 4.5em;
 }
 
@@ -200,6 +209,7 @@ nav ul a {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 nav ul a:hover {
@@ -425,7 +435,7 @@ input[type="checkbox"] {
     font-weight: 200;
     opacity: 0;
     font-family: 'SegoeUI', sans-serif;
-    transition: filter 0.1s cubic-bezier(.46, .02, .54, .95), scale 0.07s ease;
+    transition: filter 0.1s cubic-bezier(.46, .02, .54, .95), scale 0.4s cubic-bezier(.5,3,.4,1);
 }
 
 .button {
@@ -454,12 +464,14 @@ input[type="checkbox"] {
 .button-discord:hover {
     cursor: pointer;
     filter: brightness(115%);
+    scale: 1.05;
 }
 
 .button:active,
 .button-discord:active {
     filter: brightness(90%);
     scale: 0.95;
+    transition: all 0.1s ease;
 }
 
 @media (min-width: 2560px) {
@@ -1862,7 +1874,7 @@ strong {
     border-radius: 20px;
     padding: 40px 50px;
     transform: translateY(70px);
-    transition: all 0.25s ease;
+    transition: all 0.5s cubic-bezier(.5,3,.4,1);
     margin: 0 3em;
 }
 
