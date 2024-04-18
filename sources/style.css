@@ -138,7 +138,7 @@ body {
     z-index: 3000;
     position: fixed;
     padding: 15px 15px 0 15px;
-    transition: padding 0.4s cubic-bezier(.5,5.02,.59,1);
+    transition: padding 0.4s ease;
     /* overflow: hidden; */
 }
 
@@ -1558,8 +1558,12 @@ p.disclaimer span.disclaimer-btn, #explanation {
     color: #cdcdcd;
     font-weight: 400;
     cursor: pointer;
+    transition: padding 0.4s cubic-bezier(.39,0,.06,1);
 }
 
+.question button:hover {
+    padding: 32px 15px;
+}
 
 .faqbutton span strong {
     color: #e2e1e1;
