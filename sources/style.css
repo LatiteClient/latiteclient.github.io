@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 @font-face {
     font-family: SegoeUI;
@@ -435,7 +436,7 @@ input[type="checkbox"] {
     font-weight: 200;
     opacity: 0;
     font-family: 'SegoeUI', sans-serif;
-    transition: filter 0.1s cubic-bezier(.46, .02, .54, .95), scale 0.4s cubic-bezier(.5,3,.4,1);
+    transition: filter 0.1s cubic-bezier(.46, .02, .54, .95), scale 0.2s ease-out;
 }
 
 .button {
@@ -1558,11 +1559,6 @@ p.disclaimer span.disclaimer-btn, #explanation {
     color: #cdcdcd;
     font-weight: 400;
     cursor: pointer;
-    transition: padding 0.4s cubic-bezier(.39,0,.06,1);
-}
-
-.question button:hover {
-    padding: 32px 15px;
 }
 
 .faqbutton span strong {
@@ -1848,6 +1844,79 @@ code {
 
 strong {
     font-weight: 300;
+}
+
+.jiayi {
+    padding: 20px 30px;
+    background-image: url(./jiayi.png);
+    background-size: cover;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.jiayi p, .jiayi h2 {
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 3px 3px #0000008c;
+}
+
+.jiayi p {
+    font-weight: 500;
+    text-align: center;
+}
+
+.jiayi h2 {
+    font-weight: 900;
+    font-style: italic;
+    color: #dc0000;
+}
+
+.jiayi img {
+    height: 50px;
+    width: auto;
+}
+
+.jiayi-import {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: #ffffff;
+    background-color: #dc0000;
+    border: none;
+    box-shadow: 5px 5px #0000008c;
+    transition: all 0.2s ease;
+}
+
+.line {
+    width: calc(100% + 20px);
+    height: 2px;
+    background-color: #181818;
+    margin-bottom: 20px;
+    transform: translateX(-10px);
+}
+
+h2 span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 35px;
+    margin-right: 10px;
+    font-style: italic;
+}
+
+.jiayi-import:hover {
+    filter: brightness(1.3);
+}
+
+.jiayi-import:active {
+    box-shadow: 0px 0px #0000008c;
+    transform: translate(5px, 5px);
+    filter: brightness(0.7);
 }
 
 .overlay-container {
