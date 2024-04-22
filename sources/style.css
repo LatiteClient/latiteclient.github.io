@@ -1833,7 +1833,7 @@ code {
 }
 
 .dl ul li {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     list-style: none;
 }
 
@@ -1853,9 +1853,7 @@ strong {
     font-weight: 300;
 }
 
-.jiayi {
-    padding: 20px 30px;
-    background-image: url(./jiayi.png);
+.widget {
     background-size: cover;
     margin-bottom: 20px;
     display: flex;
@@ -1865,6 +1863,150 @@ strong {
     justify-content: center;
     border-radius: 15px;
     overflow: hidden;
+    position: relative;
+}
+
+.dlgradient {
+    position: absolute;
+    width: auto;
+    height: 500px;
+    z-index: 0;
+    opacity: 0.4;
+    animation: GradientLoopAnim 12s linear infinite;
+}
+
+@keyframes GradientLoopAnim {
+    0% {
+        rotate: 0deg;
+        scale: 1;
+    }
+    50% {
+        scale: 1.3;
+    }
+    100% {
+        rotate: 360deg;
+        scale: 1;
+    }
+}
+
+.latitewidget p, .latitewidget h2, .latitewidget a {
+    position: relative;
+    z-index: 1;
+}
+
+.latitewidget p {
+    font-size: 18px;
+    font-weight: 200;
+    text-align: center;
+    text-shadow: 3px 3px 3px #00000049;
+}
+
+.latite-dl {
+    padding: 12px 30px;
+    font-size: 19px;
+    font-weight: 300;
+    color: #ffffff;
+    background-image: linear-gradient(to bottom right, #10a9a8, #5f65b9);
+    border: none;
+    box-shadow: 0 0 9px 1px #1092a994;
+    text-shadow: 3px 3px 4px #0000002a;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.latite-dl:hover {
+    filter: brightness(1.3);
+}
+
+.latite-dl:active {
+    transform: scale(0.9);
+    filter: brightness(0.7);
+}
+
+.latitewidget h2 {
+    display: flex;
+    align-items: center;
+    font-weight: 2s00;
+    color: #ffffff;
+    font-size: 38px;
+    text-shadow: 3px 3px 3px #00000049;
+}
+
+.latitewidget {
+    padding: 30px 30px;
+    /* background-image: url(./bg7.webp); */
+    background-color: #030303;
+    border: solid 2px #8585851c;
+    /* box-shadow: inset 0 0 40px 40px #000000; */
+}
+
+.latitewidget h2 span img {
+    height: 60px;
+    width: auto;
+    border-radius: 50%;
+    box-shadow: 3px 3px 3px #00000049;
+}
+
+.dropdown-title {
+    margin-bottom: 20px;
+}
+
+.dropdown-dl-button span {
+    color: #e2e1e1;
+    font-weight: 200;
+}
+
+/* .dropdown-text button .dlarrow.icon-rotate {
+    transform: rotate(180deg);
+} */
+
+.dropdown-title button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    color: #cdcdcd;
+    background-color: #00000000;
+    cursor: pointer;
+}
+
+.dropdown-title button .d-arrow.icon-rotate {
+    transform: rotate(180deg);
+}
+
+#dropdownul {
+    font-size: 19px;
+    max-height: 0;
+    opacity: 0;
+    line-height: 1.6;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    color: #cdcdcd;
+    font-weight: 100;
+    padding: 0 40px;
+}
+
+#dropdownul ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#dropdownul.revealul {
+    max-height: 1000px;
+    opacity: 1;
+    padding: 20px 40px 0 40px;
+}
+
+.jiayi {
+    padding: 20px 30px;
+    background-image: url(./jiayi.png);
 }
 
 .jiayi p,
@@ -1895,10 +2037,6 @@ strong {
     text-align: center;
 }
 
-.jiayi img {
-    height: 50px;
-    width: auto;
-}
 
 .jiayi-import {
     padding: 10px 20px;
@@ -1925,8 +2063,10 @@ h2 span {
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     font-size: 35px;
-    margin-right: 10px;
+    margin-right: 12px;
     font-style: italic;
+    display: inline-flex;
+    align-items: center;
 }
 
 .jiayi-import:hover {

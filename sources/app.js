@@ -114,6 +114,18 @@ buttons.forEach(button => {
 	})
 });
 
+const dlButtons = document.querySelectorAll('.dropdown-dl-button');
+
+dlButtons.forEach(dlButton => {
+	dlButton.addEventListener('click', () => {
+		const faq = dlButton.nextElementSibling;
+		const icon = dlButton.children[1];
+
+		faq.classList.toggle('revealul');
+		icon.classList.toggle('icon-rotate');
+	})
+});
+
 function toggleCredits() {
 	var creditContainer = document.querySelector('.overlay-container.credit')
 	var creditBox = document.querySelector('.overlay-box.credit')
