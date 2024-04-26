@@ -2004,6 +2004,7 @@ strong {
     padding: 20px 40px 0 40px;
 }
 
+/*
 .jiayi {
     padding: 20px 30px;
     background-image: url(./jiayi.png);
@@ -2049,7 +2050,7 @@ strong {
     box-shadow: 5px 5px #0000008c;
     transition: all 0.2s ease;
     cursor: pointer;
-}
+}*/
 
 .line {
     width: calc(100% + 20px);
@@ -2245,6 +2246,7 @@ footer {
 
 @media (min-width: 2560px) {
 
+    /*
     .jiayi {
         padding: 40px 60px;
         margin-bottom: 40px;
@@ -2264,7 +2266,7 @@ footer {
         padding: 20px 40px;
         font-size: 38px;
         box-shadow: 5px 5px #0000008c;
-    }
+    }*/
 
     .line {
         width: calc(100% + 40px);
