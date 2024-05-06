@@ -282,7 +282,7 @@ input[type="checkbox"] {
         -o-transition: all 0.3s ease;
         border: solid 1px #ffffff0a;
         backdrop-filter: blur(10px);
-        background-color: #0e0e0e;
+        background-color: #070707;
         margin: 20px 0;
         border-radius: var(--global-radius);
         overflow: hidden;
@@ -296,7 +296,7 @@ input[type="checkbox"] {
     nav ul a {
         width: 100%;
         left: 100%;
-        height: calc(1 / 6 * (100vh - 4.2em - 60px));
+        height: calc(1 / 7 * (100vh - 4.2em - 60px));
         max-height: 70px;
         font-size: 20px;
         transition: all 0.15s ease;
@@ -689,12 +689,13 @@ input[type="checkbox"] {
     width: 700px;
     background-color: #ec262d;
     border-radius: 12px;
-    outline: solid 4px #ec262d5d;
-    box-shadow: 0 5px 10px #00000083;
+    /* outline: solid 4px #ec262d5d; */
+    /* box-shadow: 0 5px 10px #00000083; */
+    box-shadow: 0 0 15px #ec262d8f;
     display: flex;
     align-items: center;
     gap: 24px;
-    transform: translateX(1000px);
+    transform: translateX(1050px);
     transition: all 0.5s cubic-bezier(0,.35,.28,1);
 }
 
@@ -724,6 +725,22 @@ input[type="checkbox"] {
 .notification-text {
     color: #fff;
     width: 450px;
+}
+
+@media (max-width: 1070px) {
+
+    .v2-notification {
+        width: 100%;
+        bottom: 0;
+        height: auto;
+        right: 0;
+        border-radius: 0;
+    }
+
+    .notification-text {
+        width: 100%;
+        padding: 0 50px 0 0;
+    }
 }
 
 /* ----------- SECTION 1 --------------------- */

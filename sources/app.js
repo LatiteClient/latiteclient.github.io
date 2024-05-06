@@ -7,7 +7,7 @@ function toggleNotification() {
 function closeNotification() {
 	var notification = document.querySelector('.v2-notification');
 
-	notification.style.transform = 'translateX(1000px)';
+	notification.style.transform = 'translateX(1050px)';
 }
 
 var overlayContainers = document.querySelectorAll('.overlay-container');
