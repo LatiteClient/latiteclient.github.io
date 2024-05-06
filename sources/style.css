@@ -465,7 +465,7 @@ input[type="checkbox"] {
 .button-discord:hover {
     cursor: pointer;
     filter: brightness(115%);
-    scale: 1.05;
+    /* scale: 1.05; */
 }
 
 .button:active,
