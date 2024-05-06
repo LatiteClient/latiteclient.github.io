@@ -1,3 +1,15 @@
+function toggleNotification() {
+	var notification = document.querySelector('.v2-notification');
+
+	notification.style.transform = 'translateX(0px)';
+}
+
+function closeNotification() {
+	var notification = document.querySelector('.v2-notification');
+
+	notification.style.transform = 'translateX(1000px)';
+}
+
 var overlayContainers = document.querySelectorAll('.overlay-container');
 
 overlayContainers.forEach(function (overlayContainer) {
@@ -19,7 +31,7 @@ function toggleAlert() {
 	) {
 		container.style.opacity = '0';
 		container.style.pointerEvents = 'none';
-		box.style.transform = 'translateY(70px)';
+		box.style.transform = 'translateY(100px)';
 	} else {
 		container.style.opacity = '1';
 		container.style.pointerEvents = 'all';
@@ -56,7 +68,7 @@ function toggleAlertButton() {
 	) {
 		container.style.opacity = '0';
 		container.style.pointerEvents = 'none';
-		box.style.transform = 'translateY(70px)';
+		box.style.transform = 'translateY(100px)';
 
 		containerGood.style.opacity = '1';
 		containerGood.style.pointerEvents = 'all';
@@ -68,7 +80,7 @@ function toggleAlertButton() {
 
 		containerGood.style.opacity = '0';
 		containerGood.style.pointerEvents = 'none';
-		boxGood.style.transform = 'translateY(70px)';
+		boxGood.style.transform = 'translateY(100px)';
 	}
 }
 
@@ -83,7 +95,7 @@ function toggleAlertDownlaodButton() {
 	) {
 		container.style.opacity = '0';
 		container.style.pointerEvents = 'none';
-		box.style.transform = 'translateY(70px)';
+		box.style.transform = 'translateY(100px)';
 	} else {
 		container.style.opacity = '1';
 		container.style.pointerEvents = 'all';
@@ -168,7 +180,7 @@ function closeBeta() {
 
 	creditContainer.style.opacity = '0';
 	creditContainer.style.pointerEvents = 'none';
-	creditBox.style.transform = 'translateY(70px)';
+	creditBox.style.transform = 'translateY(100px)';
 }
 
 function closeCredits() {
@@ -177,7 +189,7 @@ function closeCredits() {
 
 	creditContainer.style.opacity = '0';
 	creditContainer.style.pointerEvents = 'none';
-	creditBox.style.transform = 'translateY(70px)';
+	creditBox.style.transform = 'translateY(100px)';
 }
 
 function closeAlerts() {
@@ -186,7 +198,7 @@ function closeAlerts() {
 
 	creditContainer.style.opacity = '0';
 	creditContainer.style.pointerEvents = 'none';
-	creditBox.style.transform = 'translateY(70px)';
+	creditBox.style.transform = 'translateY(100px)';
 }
 
 function closeDownload() {
@@ -195,7 +207,7 @@ function closeDownload() {
 
 	creditContainer.style.opacity = '0';
 	creditContainer.style.pointerEvents = 'none';
-	creditBox.style.transform = 'translateY(70px)';
+	creditBox.style.transform = 'translateY(100px)';
 }
 
 function closeAlertsGood() {
@@ -204,7 +216,7 @@ function closeAlertsGood() {
 
 	creditContainer.style.opacity = '0';
 	creditContainer.style.pointerEvents = 'none';
-	creditBox.style.transform = 'translateY(70px)';
+	creditBox.style.transform = 'translateY(100px)';
 }
 
 function closeLicense() {
@@ -213,7 +225,8 @@ function closeLicense() {
 
 	creditContainer.style.opacity = '0';
 	creditContainer.style.pointerEvents = 'none';
-	creditBox.style.transform = 'translateY(70px)';
+	creditBox.style.transform = 'translateY(100px)';
 }
 
+window.onload = setTimeout(toggleNotification, 2000);
 // window.onload = toggleAlert;
