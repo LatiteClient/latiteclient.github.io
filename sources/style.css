@@ -709,6 +709,25 @@ input[type="checkbox"] {
 .v2-notification img.ann {
     height: auto;
     width: 70px;
+    animation: bellShake 2.5s cubic-bezier(.26,.45,.55,1) infinite;
+}
+
+@keyframes bellShake {
+    0% {
+        rotate: 0deg;
+    }
+    10% {
+        rotate: -20deg;
+    }
+    20% {
+        rotate: 20deg;
+    }
+    30% {
+        rotate: -15deg;
+    }
+    38% {
+        rotate: 0deg;
+    }
 }
 
 .close-noti {
@@ -1617,7 +1636,7 @@ p.disclaimer span.disclaimer-btn,
     border-bottom: 1px solid #ffffff27;
 }
 
-.question button {
+.question .faqbutton {
     width: 100%;
     background-color: #00000000;
     display: flex;
@@ -1737,9 +1756,10 @@ p.disclaimer span.disclaimer-btn,
 
 .atlas-container {
     width: 100%;
-    margin-bottom: 9em;
     background-image: linear-gradient(to bottom right, #6070fd 30%, #4d56fe 70%);
-    padding: 70px calc((100% - 70em) / 2);
+    box-shadow: inset 0 0 40px #000000ab;
+    padding: 70px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
