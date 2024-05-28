@@ -1,32 +1,33 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 @font-face {
     font-family: SegoeUI;
     src: url(fonts/SegoeUI-Light.woff2) format('woff2');
-    font-weight: 100;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: SegoeUI;
-    src: url(fonts/SegoeUI-Regular.woff2) format('woff2');
-    font-weight: 200;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: SegoeUI;
-    src: url(fonts/SegoeUI-SemiBold.woff2) format('woff2');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: SegoeUI;
-    src: url(fonts/SegoeUI-Bold.woff2) format('woff2');
+    src: url(fonts/SegoeUI-Regular.woff2) format('woff2');
     font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src: url(fonts/SegoeUI-SemiBold.woff2) format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src: url(fonts/SegoeUI-Bold.woff2) format('woff2');
+    font-weight: 700;
     font-style: normal;
 }
 
@@ -54,7 +55,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'SegoeUI', 'Open Sans', sans-serif;
-    font-weight: 100;
+    font-weight: 300;
 }
 
 html,
@@ -413,7 +414,7 @@ input[type="checkbox"] {
 
 .desctext {
     color: #a7a7a7e5;
-    font-weight: 300;
+    font-weight: 600;
     font-size: 1.07em;
     display: inline-block;
     text-align: center;
@@ -433,7 +434,7 @@ input[type="checkbox"] {
     border-style: none;
     border-radius: var(--button-radius);
     font-size: 1em;
-    font-weight: 200;
+    font-weight: 400;
     opacity: 0;
     font-family: 'SegoeUI', sans-serif;
     transition: filter 0.1s cubic-bezier(.46, .02, .54, .95), scale 0.2s ease-out;
@@ -696,7 +697,7 @@ input[type="checkbox"] {
     align-items: center;
     gap: 24px;
     transform: translateX(1050px);
-    transition: all 0.5s cubic-bezier(0,.35,.28,1);
+    transition: all 0.5s cubic-bezier(0, .35, .28, 1);
 }
 
 .textandclose {
@@ -709,22 +710,26 @@ input[type="checkbox"] {
 .v2-notification img.ann {
     height: auto;
     width: 70px;
-    animation: bellShake 2.5s cubic-bezier(.26,.45,.55,1) infinite;
+    animation: bellShake 2.5s cubic-bezier(.26, .45, .55, 1) infinite;
 }
 
 @keyframes bellShake {
     0% {
         rotate: 0deg;
     }
+
     10% {
         rotate: -20deg;
     }
+
     20% {
         rotate: 20deg;
     }
+
     30% {
         rotate: -15deg;
     }
+
     38% {
         rotate: 0deg;
     }
@@ -738,7 +743,7 @@ input[type="checkbox"] {
 }
 
 .v2-notification h2 {
-    font-weight: 200;
+    font-weight: 400;
 }
 
 .notification-text {
@@ -839,13 +844,15 @@ input[type="checkbox"] {
 
 .mods-list {
     height: 400px;
-    width: /* calc(1174 / 1113 * 400px)*/ 100%;
+    width:
+        /* calc(1174 / 1113 * 400px)*/
+        100%;
     object-fit: cover;
 }
 
 .h1 {
     font-size: 1.6em;
-    font-weight: 300;
+    font-weight: 600;
     color: #e2e1e1;
     line-height: 1.75em;
 }
@@ -857,7 +864,7 @@ input[type="checkbox"] {
 }
 
 .section-header {
-    font-weight: 200;
+    font-weight: 400;
     color: #e2e1e1;
     font-size: 2.3em;
     margin-bottom: 30px;
@@ -868,7 +875,7 @@ input[type="checkbox"] {
 }
 
 .f-section-header {
-    font-weight: 200;
+    font-weight: 400;
     color: #e2e1e1;
     font-size: 2.3em;
     padding-top: 9rem;
@@ -881,7 +888,7 @@ input[type="checkbox"] {
 
 .text-gradient {
     background-image: linear-gradient(to bottom right, #10a9a8 30%, #5f65b9 70%);
-    font-weight: 300;
+    font-weight: 600;
     max-width: max-content;
     background-clip: text;
     color: transparent;
@@ -900,7 +907,7 @@ input[type="checkbox"] {
     background-color: #9b9b9b09;
     text-decoration: none;
     color: #cdcdcd;
-    font-weight: 200;
+    font-weight: 400;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -953,7 +960,7 @@ input[type="checkbox"] {
 
 .item {
     display: flex;
-    background-color: #ffffff02;
+    background-color: #ffffff04;
     border: solid 1px #ffffff0a;
     border-radius: var(--global-radius);
     overflow: hidden;
@@ -1104,7 +1111,7 @@ input[type="checkbox"] {
 
     .h1 {
         font-size: 3em;
-        font-weight: 300;
+        font-weight: 600;
         color: #e2e1e1;
         line-height: 1.75em;
     }
@@ -1349,7 +1356,6 @@ input[type="checkbox"] {
 
 .trailer-container {
     width: 70em;
-    margin-bottom: 9em;
     position: relative;
     z-index: 0;
 }
@@ -1434,6 +1440,147 @@ input[type="checkbox"] {
     }
 }
 
+/* ------------------------- Plugins Section ------------------------- */
+
+.plugin-container {
+    position: relative;
+    /* background-color: #ffffff04; */
+    background-color: #000000;
+    border: solid 1px #ffffff0a;
+    border-radius: var(--global-radius);
+    height: 700px;
+    overflow: hidden;
+}
+
+.plugin-link-info {
+    color: #5f5f5f;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.plugin-link-info a {
+    color: #5f5f5f;
+}
+
+.plugin-main-container {
+    width: 70em;
+    margin-bottom: 9em;
+    position: relative;
+    z-index: 0;
+}
+
+.plugin-fade::-webkit-scrollbar {
+    width: 4px;
+    background: #000000;
+}
+
+.plugin-fade::-webkit-scrollbar-thumb {
+    border: 5px solid rgba(0, 0, 0, 0);
+    background-color: #0f0f0f;
+}
+
+.plugin-fade {
+    display: flex;
+    scrollbar-color: #0f0f0f #000000;
+    scrollbar-width: thin;
+    position: relative;
+    flex-direction: column;
+    padding: 50px;
+    gap: 20px;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    mask-image: linear-gradient(180deg, #00000057 0%, rgba(0, 0, 0, 1) 6%, rgba(0, 0, 0, 1) 94%, #00000057 100%);
+}
+
+/* .plugin-fade::-webkit-scrollbar {
+    display: none;
+}
+
+.plugin-fade {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+} */
+
+.plugin-item {
+    background-color: #ffffff07;
+    border: solid 2px #00000000;
+    padding: 28px;
+    width: 100%;
+    border-radius: 15px;
+    transition: all 0.15s ease-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plugin-item:hover {
+    border: solid 2px #313976;
+    scale: 1.01;
+}
+
+.plugin-header {
+    color: #ffffff;
+    display: flex;
+    gap: 10px;
+    align-items: end;
+}
+
+.plugin-header h2 {
+    font-weight: 400;
+}
+
+.plugin-header p {
+    color: #ffffffb2;
+    font-weight: 400;
+}
+
+.new-plugin {
+    padding: 2px 5px;
+    background-color: #ec262d;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 3px;
+}
+
+.plugin-description {
+    color: #ffffff79;
+    max-width: 500px;
+}
+
+.plugin-line {
+    width: 400px;
+    height: 2px;
+    background-color: #181818;
+    margin: 10px 0;
+}
+
+.plugin-download {
+    height: 70px;
+    width: 70px;
+    background-color: #313976;
+    border: none;
+    border-radius: 10px;
+    transition: cursor, filter 0.1s ease-in-out, scale 0.05s ease-out;
+    box-shadow: 0 0 20px #31397681;
+}
+
+.plugin-download:hover {
+    cursor: pointer;
+    filter: brightness(1.2);
+}
+
+.plugin-download:active {
+    scale: 0.9;
+}
+
+.plugin-download img {
+    height: 50px;
+    width: auto;
+}
+
+/* ------------------------------------------------------------------- */
 
 .l-desc-container {
     display: flex;
@@ -1477,7 +1624,7 @@ input[type="checkbox"] {
 }
 
 .l-section-header {
-    font-weight: 200;
+    font-weight: 400;
     color: #e2e1e1;
     font-size: 2.3em;
     margin-bottom: 0.2em;
@@ -1496,7 +1643,7 @@ input[type="checkbox"] {
 
 .l-text-gradient {
     background-image: linear-gradient(to bottom right, #10a9a8 20%, #5f65b9 80%);
-    font-weight: 300;
+    font-weight: 600;
     max-width: max-content;
     background-clip: text;
     color: transparent;
@@ -1523,7 +1670,7 @@ p.disclaimer span#disclaimer-text {
     color: #5f5f5f;
     font-size: 15px;
     text-align: center;
-    font-weight: 200;
+    font-weight: 400;
     margin-top: 10px;
 }
 
@@ -1582,7 +1729,7 @@ p.disclaimer span.disclaimer-btn,
 
     .h1 {
         font-size: 3em;
-        font-weight: 300;
+        font-weight: 600;
         color: #e2e1e1;
         line-height: 1.75em;
     }
@@ -1648,7 +1795,7 @@ p.disclaimer span.disclaimer-btn,
     outline: none;
     font-size: 22px;
     color: #cdcdcd;
-    font-weight: 400;
+    font-weight: 700;
     cursor: pointer;
 }
 
@@ -1664,10 +1811,18 @@ p.disclaimer span.disclaimer-btn,
     overflow: hidden;
     transition: all 0.4s ease;
     color: #cdcdcd;
-    font-weight: 100;
+    font-weight: 300;
     padding: 0px 40px;
 }
 
+.plugin-faq-header {
+    font-weight: 400;
+    font-size: 30px;
+    color: #e2e1e1;
+    margin-top: 50px;
+    text-align: center;
+    text-shadow: 0 0 0.2em #ffffff9c;
+}
 
 .tutorial-embed {
     border: none;
@@ -1819,14 +1974,14 @@ p.disclaimer span.disclaimer-btn,
 .brandtext h1 {
     font-size: 40px;
     font-family: "Jost", sans-serif;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1;
 }
 
 .brandtext h3 {
     font-size: 23px;
     font-family: "Jost", sans-serif;
-    font-weight: 300;
+    font-weight: 600;
     line-height: 1;
 }
 
@@ -1880,7 +2035,7 @@ code {
     border-radius: 6px;
     font-family: 'SegoeUI', sans-serif;
     font-size: 17px;
-    font-weight: 200;
+    font-weight: 400;
     display: inline-flex;
     align-items: center;
 }
@@ -1907,14 +2062,14 @@ code {
 
 .links {
     color: #cdcdcd;
-    font-weight: 100;
+    font-weight: 300;
 }
 
 .overlay-content p .links,
 .dl ul li .links,
 .dl .links {
     color: #ffffff;
-    font-weight: 100;
+    font-weight: 300;
 }
 
 .dl ul li {
@@ -1934,7 +2089,7 @@ code {
 }
 
 strong {
-    font-weight: 300;
+    font-weight: 600;
 }
 
 .widget {
@@ -1964,23 +2119,27 @@ strong {
         rotate: 0deg;
         scale: 1;
     }
+
     50% {
         scale: 1.3;
     }
+
     100% {
         rotate: 360deg;
         scale: 1;
     }
 }
 
-.latitewidget p, .latitewidget h2, .latitewidget a {
+.latitewidget p,
+.latitewidget h2,
+.latitewidget a {
     position: relative;
     z-index: 1;
 }
 
 .latitewidget p {
     font-size: 18px;
-    font-weight: 200;
+    font-weight: 400;
     text-align: center;
     text-shadow: 3px 3px 3px #00000049;
 }
@@ -1988,7 +2147,7 @@ strong {
 .latite-dl {
     padding: 12px 30px;
     font-size: 19px;
-    font-weight: 300;
+    font-weight: 600;
     color: #ffffff;
     background-image: linear-gradient(to bottom right, #10a9a8, #5f65b9);
     border: none;
@@ -2038,7 +2197,7 @@ strong {
 
 .dropdown-dl-button span {
     color: #e2e1e1;
-    font-weight: 200;
+    font-weight: 400;
 }
 
 /* .dropdown-text button .dlarrow.icon-rotate {
@@ -2072,7 +2231,7 @@ strong {
     overflow: hidden;
     transition: all 0.4s ease;
     color: #cdcdcd;
-    font-weight: 100;
+    font-weight: 300;
     padding: 0 40px;
 }
 
@@ -2196,7 +2355,7 @@ h2 span {
     border-radius: 20px;
     padding: 40px 50px;
     transform: translateY(70px);
-    transition: all 0.5s cubic-bezier(0,.6,.06,1);
+    transition: all 0.5s cubic-bezier(0, .6, .06, 1);
     margin: 0 3em;
 }
 
