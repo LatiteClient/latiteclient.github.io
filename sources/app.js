@@ -20,65 +20,6 @@ overlayContainers.forEach(function (overlayContainer) {
 	});
 });
 
-// function test() {
-// 	{
-// 		if (confirm("The simple method of installing this plugin is typing '.plugin install [plugin name]' in Minecraft chat, followed by another command, '.plugin load [plugin name]'. If you would like to download the ZIP file instead, Click OK.")) {
-// 			var pluginItems = document.querySelectorAll(".plugin-item");
-// 			pluginItems.forEach((pluginItem) => {
-// 				var link = pluginItem.querySelector(".plugin-link").getAttribute("value");
-// 				window.open(`${link}`, "_blank", "scrollbars=no,resizable=no,location=no,toolbar=no,menubar=no,width=600,height=10,left=100,top=100")
-// 			});
-// 		}
-// 		else {
-
-// 		}
-// 	}
-// }
-
-
-
-
-// function pluginConfirm() {
-// 	if (confirm("The simple method of installing this plugin is typing '.plugin install [plugin name]' in Minecraft chat, followed by another command, '.plugin load [plugin name]'. If you would like to download the ZIP file instead, Click OK.")) {
-// 		var pluginItems = document.querySelectorAll(".plugin-item");
-// 		pluginItems.forEach((pluginItem) => {
-// 			pluginItem.addEventListener('click', () => {
-// 				var link = pluginItem.querySelector(".plugin-link").getAttribute("value");
-// 				window.open(`${link}`, "_blank", "scrollbars=no,resizable=no,location=no,toolbar=no,menubar=no,width=600,height=10,left=100,top=100")
-// 			})
-// 		});
-// 	}
-// }
-
-
-
-
-// function pluginConfirm() {
-// 	if (confirm("The simple method of installing this plugin is typing '.plugin install [plugin name]' in Minecraft chat, followed by another command, '.plugin load [plugin name]'. If you would like to download the ZIP file instead, Click OK.")) {
-// 		var pluginItems = document.querySelectorAll(".plugin-item");
-// 		pluginItems.forEach((pluginItem) => {
-// 			pluginItem.addEventListener('click', () => {
-// 				var link = pluginItem.querySelector(".plugin-link").getAttribute("value");
-// 				window.open(`${link}`, "_blank", "scrollbars=no,resizable=no,location=no,toolbar=no,menubar=no,width=600,height=10,left=100,top=100")
-// 			})
-// 		});
-// 	}
-// }
-
-// document.querySelector(".plugin-link").addEventListener("click", function() {
-//     // if (confirm("Are you sure you want to open the new webpage?")) {
-//     //     window.open("https://example.com", "_blank");
-//     // }
-// 	if (confirm("The simple method of installing this plugin is typing '.plugin install [plugin name]' in Minecraft chat, followed by another command, '.plugin load [plugin name]'. If you would like to download the ZIP file instead, Click OK.")) {
-// 		var pluginItems = document.querySelectorAll(".plugin-item");
-// 		pluginItems.forEach((pluginItem) => {
-// 			pluginItem.addEventListener('click', function() {
-// 				var link = pluginItem.querySelector(".plugin-link").getAttribute("value");
-// 				window.open(`${link}`, "_blank", "scrollbars=no,resizable=no,location=no,toolbar=no,menubar=no,width=600,height=10,left=100,top=100")
-// 			})
-// 		});
-// 	}
-// });
 
 var pluginItems = document.querySelectorAll(".plugin-item");
 pluginItems.forEach((pluginItem) => {
@@ -99,38 +40,6 @@ function handlePluginItemClick() {
 }
 
 
-// function pluginConfirm() {
-// 	{
-// 		if (confirm("The simple method of installing this plugin is typing '.plugin install [plugin name]' in Minecraft chat, followed by another command, '.plugin load [plugin name]'. If you would like to download the ZIP file instead, Click OK.")) {
-// 			var pluginItems = document.querySelectorAll(".plugin-item");
-// 			pluginItems.forEach((pluginItem) => {
-// 				var linkbtn = pluginItem.querySelector(".plugin-link");
-// 				linkbtn.addEventListener('click', () => {
-// 					var link = pluginItem.querySelector(".plugin-link").getAttribute("value");
-// 					window.open(`${link}`, "_blank", "scrollbars=no,resizable=no,location=no,toolbar=no,menubar=no,width=600,height=10,left=100,top=100")
-// 				})
-// 			});
-// 		}
-// 		else {
-// 			null
-// 		}
-// 	}
-// }
-
-// function test() {
-// 	var pluginItems = document.querySelectorAll(".plugin-item");
-// 	pluginItems.forEach((pluginItem) => {
-// 		{
-// 			if (confirm("The simple method of installing this plugin is typing '.plugin install [plugin name]' in Minecraft chat, followed by another command, '.plugin load [plugin name]'. If you would like to download the ZIP file instead, Click OK.")) {
-// 				var link = pluginItem.querySelector(".plugin-link").getAttribute("value");
-// 				window.open(`${link}`, "_blank", "scrollbars=no,resizable=no,location=no,toolbar=no,menubar=no,width=600,height=10,left=100,top=100")
-// 			}
-// 			else {
-
-// 			}
-// 		}
-// 	});
-// }
 
 function toggleAlert() {
 	const container = document.querySelector('.overlay-container.alert');
@@ -214,17 +123,6 @@ function toggleAlertDownlaodButton() {
 		box.style.transform = 'translateY(0px)';
 	}
 }
-
-// const navbar = document.querySelector('.no-blur');
-// const blurThreshold = 0;
-
-// window.addEventListener('scroll', () => {
-// 	if (window.scrollY > blurThreshold) {
-// 		navbar.classList.add('blur');
-// 	} else {
-// 		navbar.classList.remove('blur');
-// 	}
-// });
 
 const buttons = document.querySelectorAll('.faqbutton');
 

@@ -1,0 +1,289 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@font-face {
+    font-family: SegoeUI;
+    src: url(../sources/fonts/SegoeUI-Light.woff2) format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src: url(../sources/fonts/SegoeUI-Regular.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src: url(../sources/fonts/SegoeUI-SemiBold.woff2) format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src: url(../sources/fonts/SegoeUI-Bold.woff2) format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'SegoeUI', 'Open Sans', sans-serif;
+    scrollbar-color: #0f0f0f #000000;
+    scrollbar-width: thin;
+}
+
+body {
+    background-color: #000000;
+}
+
+.plugin-page-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px 50px 0 50px;
+    gap: 30px;
+    height: 245px;
+}
+
+.plugin-page-header h1 {
+    color: #f1f1f1;
+    font-weight: 300;
+    font-size: 35px;
+}
+
+.line {
+    width: calc(100% - 500px);
+    height: 2px;
+    background-color: #181818;
+}
+
+.searchbox {
+    background-color: #0c0c0c;
+    border: solid 2px #ffffff00;
+    border-bottom: solid 2px #3139768a;
+    border-radius: 100px;
+    padding: 0 16px;
+    width: 700px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#searchbar {
+    outline: none;
+    border: none;
+    background: #00000000;
+    color: #9c9c9c;
+    font-size: 16px;
+    height: 45px;
+    transition: all 0.1s ease;
+    position: relative;
+    width: 100%;
+}
+
+.fa-solid.fa-magnifying-glass {
+    color: #5e5e5e;
+    font-size: 18px;
+}
+
+.searchbox:focus-within {
+    box-shadow: 0 0 20px #3139768c;
+    border: solid 2px #313976;
+    filter: brightness(1.5);
+}
+
+.searchbox:hover {
+    filter: brightness(1.3);
+}
+
+.new-plugin {
+    padding: 2px 5px;
+    background-color: #ec262d;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 3px;
+}
+
+
+*::-webkit-scrollbar {
+    width: 4px;
+    background: #000000;
+}
+
+*::-webkit-scrollbar-thumb {
+    border: 5px solid rgba(0, 0, 0, 0);
+    background-color: #0f0f0f;
+}
+
+#plugin-list {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 50px;
+    gap: 30px;
+    overflow-y: auto;
+    /* overflow-x: hidden; */
+    max-height: calc(100vh - 245px);
+    mask-image: linear-gradient(180deg, #0000003a 0%, #000000 3%, #000000 97%, #0000003a 100%);
+}
+
+.plugin-item {
+    background-color: #0c0c0c;
+    border: solid 2px #00000000;
+    display: flex;
+    padding: 25px;
+    box-sizing: border-box;
+    width: 800px;
+    border-radius: 15px;
+    transition: all 0.15s ease-out;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease-in;
+    max-height: 146px;
+}
+
+.plugin-no-display {
+    display: none;
+}
+
+.plugin-item:hover {
+    border: solid 2px #313976;
+    scale: 1.01;
+}
+
+.plugin-header {
+    color: #ffffff;
+    display: flex;
+    gap: 10px;
+    align-items: end;
+}
+
+.plugin-header h2 {
+    font-weight: 400;
+}
+
+.bi-copy {
+    align-self: center;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #ffffff0c;
+    border: solid 1.5px #ffffff21;
+    cursor: pointer;
+}
+
+i.bi-copy .tooltiptext {
+    font-family: 'SegoeUI', 'Open Sans', sans-serif;
+    font-style: normal;
+    text-wrap: nowrap;
+    background-color: #171717;
+    border: solid 1.5px #ffffff21;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    box-shadow: 0 5px 10px #00000081;
+}
+
+.tooltiptext strong {
+    font-weight: 600;
+    font-family: 'Consolas', 'SegoeUI', sans-serif;
+}
+
+i.bi-copy:hover .tooltiptext {
+    opacity: 1;
+}
+
+.plugin-header p {
+    color: #ffffffb2;
+    font-weight: 400;
+}
+
+.new-plugin {
+    padding: 2px 5px;
+    background-color: #ec262d;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 3px;
+}
+
+.plugin-description {
+    color: #ffffff79;
+    max-width: 500px;
+    display: inline-flex;
+}
+
+.copy-command {
+    color: #cfcfcf;
+    text-decoration: underline;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.copy-command img {
+    fill: #cfcfcf;
+    width: 20px;
+    height: auto;
+}
+
+.plugin-line {
+    width: 400px;
+    height: 2px;
+    background-color: #181818;
+    margin: 10px 0;
+}
+
+.plugin-download {
+    height: 70px;
+    width: 70px;
+    background-color: #313976;
+    border: none;
+    border-radius: 10px;
+    transition: cursor, filter 0.1s ease-in-out, scale 0.05s ease-out;
+    box-shadow: 0 0 20px #31397681;
+}
+
+.plugin-download:hover {
+    cursor: pointer;
+    filter: brightness(1.2);
+}
+
+.plugin-download:active {
+    scale: 0.9;
+}
+
+.plugin-download img {
+    height: 50px;
+    width: auto;
+}
+
+.plugin-link-info {
+    color: #5f5f5f;
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+}
+
+.plugin-link-info a {
+    color: #5f5f5f;
+}
