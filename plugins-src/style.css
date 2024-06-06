@@ -75,6 +75,7 @@ body {
     display: flex;
     gap: 10px;
     align-items: center;
+    transition: all 0.1s ease;
 }
 
 #searchbar {
@@ -84,7 +85,6 @@ body {
     color: #9c9c9c;
     font-size: 16px;
     height: 45px;
-    transition: all 0.1s ease;
     position: relative;
     width: 100%;
 }
@@ -207,7 +207,6 @@ i.bi-copy .tooltiptext {
 
 .tooltiptext strong {
     font-weight: 600;
-    font-family: 'Consolas', 'SegoeUI', sans-serif;
 }
 
 i.bi-copy:hover .tooltiptext {

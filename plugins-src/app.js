@@ -50,7 +50,7 @@ function copyToClipboard(text, element) {
     navigator.clipboard.writeText(".plugin install " + text);
 
     var tooltip = element.querySelector(".tooltiptext");
-    tooltip.innerHTML = `Copied command! Paste in Minecraft chat<br>and type <strong>.plugin load ${text}</strong>`;
+    tooltip.innerHTML = `Copied command! Paste it in Minecraft chat<br>and then type <strong>.plugin load ${text}</strong>`;
     setTimeout(() => {
         tooltip.innerHTML = `Copy ${text}'s install command`;
     }, 8000);
