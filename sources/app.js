@@ -1,15 +1,3 @@
-// function toggleNotification() {
-// 	var notification = document.querySelector('.v2-notification');
-
-// 	notification.style.transform = 'translateX(0px)';
-// }
-
-// function closeNotification() {
-// 	var notification = document.querySelector('.v2-notification');
-
-// 	notification.style.transform = 'translateX(1050px)';
-// }
-
 function toggleNotification() {
 	var notification = document.querySelector('.v2-notification');
 	notification.style.transform = 'translateX(0px)';
@@ -255,6 +243,4 @@ function closeLicense() {
 	creditBox.style.transform = 'translateY(100px)';
 }
 
-// window.onload = setTimeout(toggleNotification, 2000);
 window.onload = checkNotification;
-// window.onload = toggleAlert;

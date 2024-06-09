@@ -1,6 +1,6 @@
 let newPlugins = [];
 
-fetch('plugins-src/new_plugins.json')
+fetch('./new_plugins.json')
     .then(response => response.json())
     .then(data => {
         newPlugins = data.new;
@@ -30,7 +30,7 @@ fetch('plugins-src/new_plugins.json')
                         </div>
                         <a class="plugin-link" onclick="pluginDownload('${plugin.name}')" value="https://download-directory.github.io?url=https://github.com/LatiteScripting/Scripts/tree/master/Plugins/${plugin.name}&filename=${plugin.name}" target="_blank">
                             <button class="plugin-download">
-                                <img src="plugins-src/download-plugin.svg">
+                                <img src="./download-plugin.svg">
                             </button>
                         </a>`;
 
