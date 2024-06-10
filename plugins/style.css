@@ -159,6 +159,7 @@ body {
 .plugin-item:hover {
     border: solid 2px #313976;
     scale: 1.01;
+    box-shadow: 0 0 15px #3139765e;
 }
 
 .plugin-header {
