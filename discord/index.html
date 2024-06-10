@@ -34,6 +34,13 @@
         height: 100vh;
     }
 
+    a {
+        pointer-events: none;
+        transform: translateY(-10px);
+        opacity: 0;
+        animation: animation 0.4s ease 2s forwards;
+    }
+
     button {
         padding: 20px 28px;
         font-size: 20px;
@@ -42,10 +49,6 @@
         background-color: #ffffff10;
         color: #ffffff;
         cursor: pointer;
-        pointer-events: none;
-        transform: translateY(-10px);
-        opacity: 0;
-        animation: animation 0.4s ease 2s forwards;
     }
 
     @keyframes animation {
@@ -62,7 +65,7 @@
     }
 </style>
 <body>
-    <button>Redirect to Discord</button>
+    <a href="https://discord.gg/GpV3w5tyBs"><button>Redirect to Discord</button></a>
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", (event) => {
