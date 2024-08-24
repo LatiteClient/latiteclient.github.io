@@ -57,16 +57,18 @@ function copyToClipboard(text, element) {
 }
 
 function pluginDownload(pluginName) {
-    if (confirm(`The simple method of installing this plugin is typing '.plugin install ${pluginName}' in Minecraft chat, followed by another command, '.plugin load ${pluginName}'. If you would like to download the ZIP file instead, Click OK.`)) {
-        var pluginItems = document.querySelectorAll(".plugin-item");
-        pluginItems.forEach((pluginItem) => {
-            pluginItem.addEventListener('click', () => {
-                var link = pluginItem.querySelector(".plugin-link").getAttribute("value");
-                window.open(`${link}`, "_blank", "scrollbars=no,resizable=no,location=no,toolbar=no,menubar=no,width=600,height=10,left=100,top=100")
-                location.reload();
-            })
-        });
-    }
+    //if (confirm(`The simple method of installing this plugin is typing '.plugin install ${pluginName}' in Minecraft chat, followed by another command, '.plugin load ${pluginName}'. If you would like to download the ZIP file instead, Click OK.`)) {
+    //    var pluginItems = document.querySelectorAll(".plugin-item");
+    //    pluginItems.forEach((pluginItem) => {
+    //        pluginItem.addEventListener('click', () => {
+    //            var link = pluginItem.querySelector(".plugin-link").getAttribute("value");
+    //            window.open(`${link}`, "_blank", "scrollbars=no,resizable=no,location=no,toolbar=no,menubar=no,width=600,height=10,left=100,top=100")
+    //            location.reload();
+    //        })
+    //    });
+    //}
+	
+	window.open("minecraft://addlatiteplugin?id=" + pluginName);
 }
 
 function searchPlugin() {
