@@ -217,6 +217,10 @@ input[type="checkbox"] {
         padding: 1.2em;
     }
 
+    nav {
+        height: 10em;
+    }
+
     .logo {
         margin-left: 1.2em;
     }
