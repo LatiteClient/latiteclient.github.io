@@ -132,7 +132,6 @@ body {
     padding: 50px;
     gap: 30px;
     overflow-y: auto;
-    /* overflow-x: hidden; */
     max-height: calc(100vh - 245px);
     mask-image: linear-gradient(180deg, #0000003a 0%, #000000 3%, #000000 97%, #0000003a 100%);
 }
@@ -145,10 +144,9 @@ body {
     box-sizing: border-box;
     width: 800px;
     border-radius: 15px;
-    transition: all 0.15s ease-out;
+    transition: all 0.15s cubic-bezier(.05,.73,.26,.95);
     justify-content: space-between;
     align-items: center;
-    transition: all 0.2s ease-in;
     max-height: 146px;
 }
 
@@ -158,7 +156,7 @@ body {
 
 .plugin-item:hover {
     border: solid 2px #313976;
-    scale: 1.01;
+    /* scale: 1.01; */
     box-shadow: 0 0 15px #3139765e;
 }
 
@@ -173,46 +171,69 @@ body {
     font-weight: 400;
 }
 
-.bi-copy {
-    align-self: center;
+.copyicon {
+    position: relative;
     display: inline-flex;
     align-items: center;
-    position: relative;
     justify-content: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 5px;
+    gap: 6px;
+    padding: 4px 8px;
     background-color: #ffffff0c;
     border: solid 1.5px #ffffff21;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-i.bi-copy .tooltiptext {
-    font-family: 'SegoeUI', 'Open Sans', sans-serif;
+.copyicon .copy-label {
+    color: #cfcfcf;
+    font-size: 14px;
+    font-weight: 500;
     font-style: normal;
-    text-wrap: nowrap;
-    background-color: #171717;
-    border: solid 1.5px #ffffff21;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 8px;
+    position: relative;
+    z-index: 2;
+}
+
+.copyicon .bi-copy {
+    font-size: 16px;
+    color: #cfcfcf;
+}
+
+.copyicon .tooltiptext, .tooltip-active {
     position: absolute;
-    z-index: 1;
-    bottom: 150%;
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
+    left: 50%;
+    top: 130%;
+    transform: translateX(-50%);
+    background-color: #171717;
+    color: #fff;
+    padding: 6px 8px;
+    border-radius: 6px;
+    border: 1.5px solid #ffffff21;
+    font-family: 'SegoeUI', 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: center;
+    z-index: 1000;
     box-shadow: 0 5px 10px #00000081;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: auto;
+}
+
+.tooltip-active {
+    cursor: text;
+}
+
+.copyicon:hover .tooltiptext,
+.copyicon .tooltiptext.tooltip-active {
+    opacity: 1;
 }
 
 .tooltiptext strong {
     font-weight: 600;
 }
 
-i.bi-copy:hover .tooltiptext {
-    opacity: 1;
-}
 
 .plugin-header p {
     color: #ffffffb2;

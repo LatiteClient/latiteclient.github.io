@@ -20,9 +20,16 @@ fetch('./new_plugins.json')
                         <div class="plugin-text">
                             <div class="plugin-header">
                                 <h2 class="plugin-name">${plugin.name}</h2>
-                                <i class="bi bi-copy" onclick="copyToClipboard('${plugin.name}', this)">
-                                    <p class="tooltiptext" id="myTooltip">Copy ${plugin.name}'s install command</p>
-                                </i>
+                                <span class="copyicon" onclick="copyInstallCommand('${plugin.name}', this)">
+                                    <span class="copy-label">Install</span>
+                                    <i class="bi bi-copy"></i>
+                                    <p class="tooltiptext">Copy ${plugin.name}'s install command</p>
+                                </span>
+                                <span class="copyicon" onclick="copyLoadCommand('${plugin.name}', this)">
+                                    <span class="copy-label">Load</span>
+                                    <i class="bi bi-copy"></i>
+                                    <p class="tooltiptext">Copy ${plugin.name}'s load command</p>
+                                </span>
                                 <p>By ${pluginData.author}</p>
                             </div>
                             <div class="plugin-line"></div>
@@ -46,13 +53,29 @@ fetch('./new_plugins.json')
         });
     }).catch(error => console.error('Error fetching the plugin data:', error));
 
-function copyToClipboard(text, element) {
+function copyInstallCommand(text, element) {
     navigator.clipboard.writeText(".plugin install " + text);
+    const tooltip = element.querySelector(".tooltiptext");
 
-    var tooltip = element.querySelector(".tooltiptext");
-    tooltip.innerHTML = `Copied command! Paste it in Minecraft chat<br>and then type <strong>.plugin load ${text}</strong>`;
+    tooltip.innerHTML = `Copied install command!<br><br>If it did not copy, type<br>\"<strong>.plugin install ${text}</strong>\"<br>manually<br><br>Paste it in Minecraft chat<br>then use <strong>load</strong> command (Next button).`;
+
+    tooltip.classList.add("tooltip-active");
     setTimeout(() => {
         tooltip.innerHTML = `Copy ${text}'s install command`;
+        tooltip.classList.remove("tooltip-active");
+    }, 8000);
+}
+
+function copyLoadCommand(text, element) {
+    navigator.clipboard.writeText(".plugin load " + text);
+    const tooltip = element.querySelector(".tooltiptext");
+
+    tooltip.innerHTML = `Copied load command!<br><br>If it did not copy, type<br><strong>\".plugin load ${text}\"</strong><br>manually<br><br>Paste it in Minecraft chat to use the plugin`;
+
+    tooltip.classList.add("tooltip-active");
+    setTimeout(() => {
+        tooltip.innerHTML = `Copy ${text}'s load command`;
+        tooltip.classList.remove("tooltip-active");
     }, 8000);
 }
 
@@ -67,8 +90,8 @@ function pluginDownload(pluginName) {
     //        })
     //    });
     //}
-	
-	window.open("minecraft://addlatiteplugin?id=" + pluginName);
+
+    window.open("minecraft://addlatiteplugin?id=" + pluginName);
 }
 
 function searchPlugin() {

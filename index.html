@@ -72,7 +72,7 @@
                 <a onclick="toggleAlertDownlaodButton(); toggleDownload();">Downloads</a>
                 <a href="#faq">FAQ</a>
                 <a onclick="toggleBeta()">Donate</a>
-                <a onclick="toggleLicense()">License</a>
+                <a onclick="toggleLicense()">Licenses</a>
                 <a href="#plugins">Plugins</a>
                 <a href="https://discord.gg/GpV3w5tyBs" target="_blank">Discord</a>
                 <a href="https://github.com/LatiteClient/Latite" target="_blank">GitHub</a>
@@ -94,7 +94,9 @@
             <p class="desctext">A Legitimate DLL Client For Minecraft Windows 10/11 Edition</p>
         </div>
         <div class="buttonbox">
-            <button class="button" onclick="toggleAlertDownlaodButton(); toggleDownload();">Download&nbsp;<strong>V2</strong>&nbsp;<i class="fa-solid fa-download"></i></button>
+            <button class="button"
+                onclick="toggleAlertDownlaodButton(); toggleDownload();">Download&nbsp;<strong>V2</strong>&nbsp;<i
+                    class="fa-solid fa-download"></i></button>
             <form action="https://discord.gg/GpV3w5tyBs" target="_blank">
                 <button class="button-discord" href='https://discord.gg/GpV3w5tyBs' target="_blank">Discord&nbsp;<i
                         class="fa-brands fa-discord"></i></button>
@@ -102,7 +104,7 @@
         </div>
     </header>
 
-    <div class="v2-notification">
+    <!-- <div class="v2-notification">
         <img class="ann" src="./sources/announcement.png">
         <div class="textandclose">
             <div class="notification-text">
@@ -112,7 +114,7 @@
             </div>
             <img class="close-noti" src="./sources/close.png" onclick="closeNotification()">
         </div>
-    </div>
+    </div> -->
 
     <main class="content">
 
@@ -158,8 +160,7 @@
                         <div class="sdocs-container">
                             <a href="https://latitescripting.github.io" target="_blank" class="sdocs">See Docs<i
                                     class="fa-solid fa-arrow-right"></i></a>
-                            <a href="./plugins/" class="sdocs">Plugins<i
-                                    class="fa-solid fa-arrow-right"></i></a>
+                            <a href="./plugins/" class="sdocs">Plugins<i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="plugin-img"></div>
@@ -208,18 +209,26 @@
                 data-aos-delay="200" data-aos-anchor="#trigger3">
             <img src="sources/light.svg" class="light-circle" data-aos="fade-down" data-aos-easing="ease-out"
                 data-aos-delay="200" data-aos-anchor="#trigger3">
-            <video controls class="trailer" data-aos="fade-down" data-aos-easing="ease-out" data-aos-delay="200"
+            <!-- <video controls class="trailer" data-aos="fade-down" data-aos-easing="ease-out" data-aos-delay="200"
                 data-aos-anchor="#trigger3">
                 <source src="./sources/FinalRenderLatiteClientTrailer.mp4" type="video/mp4">
-            </video>
+            </video> -->
+            <iframe class="trailer" src="https://www.youtube.com/embed/xSOfTsFKixY"
+                title="Latite Client V2 TRAILER (Minecraft Windows 10/11)" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" data-aos="fade-down" data-aos-easing="ease-out"
+                data-aos-delay="200" data-aos-anchor="#trigger3" allowfullscreen></iframe>
         </section>
 
+
+
         <section class="plugin-main-container" id="plugins">
-            <p class="section-header" style="margin-top: 9rem;" data-aos="fade" data-aos-easing="ease-in-out" id="trigger10">
+            <p class="section-header" style="margin-top: 9rem;" data-aos="fade" data-aos-easing="ease-in-out"
+                id="trigger10">
                 Community-made <span class="text-gradient">Plugins</span>
             </p>
             <div class="plugin-container" data-aos="fade-down" data-aos-easing="ease-out" data-aos-delay="200"
-            data-aos-anchor="#trigger10">
+                data-aos-anchor="#trigger10">
                 <div class="plugin-fade">
                     <div class="plugin-item">
                         <div class="plugin-text">
@@ -247,7 +256,8 @@
                                 <div class="new-plugin">NEW</div>
                             </div>
                             <div class="plugin-line"></div>
-                            <p class="plugin-description">Plays a sound whenever you kill someone on supported servers</p>
+                            <p class="plugin-description">Plays a sound whenever you kill someone on supported servers
+                            </p>
                         </div>
                         <a class="plugin-link"
                             value="https://download-directory.github.io?url=https://github.com/LatiteScripting/Scripts/tree/master/Plugins/KillNotif&filename=KillNotif">
@@ -295,7 +305,9 @@
                 </div>
                 <a class="viewmoreplugins" href="./plugins/">View all<i class="fa-solid fa-arrow-right"></i></a>
             </div>
-            <div class="plugin-link-info"><a href="https://latitescripting.github.io" target="_blank">Plugin Documentation</a> &bull; <a href="https://github.com/LatiteScripting/Scripts" target="_blank">Plugin Repository</a> &bull; <a href="#plugin-faq">Plugin FAQ</a></div>
+            <div class="plugin-link-info"><a href="https://latitescripting.github.io" target="_blank">Plugin
+                    Documentation</a> &bull; <a href="https://github.com/LatiteScripting/Scripts" target="_blank">Plugin
+                    Repository</a> &bull; <a href="#plugin-faq">Plugin FAQ</a></div>
         </section>
 
         <section class="launcher-container">
@@ -326,8 +338,9 @@
                         <i class="fas fa-chevron-down d-arrow"></i>
                     </button>
                     <div id="faqp">
-                        Latite Client is a non-cheat DLL modification for Minecraft Windows 10/11 Edition
-                        which has features ranging from PVP-related utilities to world utility/visual mods and a plugin system.
+                        Latite Client is a legitimate, non-cheat DLL modification for Minecraft Windows 10/11 Edition,
+                        featuring a clean UI, 30+ customizable mods ranging from PvP utilities to world visuals, and a
+                        powerful plugin system.
                     </div>
                 </div>
 
@@ -339,13 +352,19 @@
                     <div id="faqp">
                         <p>
                             <strong>Method 1:</strong><br>
-                            Download the Latite Injector from <code>#download</code> and run it. Afterwards, select your
-                            current
-                            version of Minecraft under the Launch Button (this is NOT a version switcher, please
-                            select your CURRENT Minecraft version or your game will crash) and press launch.
+                            Download the Latite Injector Installer from the top of this page or <span class="dlfaq"
+                                onclick="toggleAlertDownlaodButton(); toggleDownload();">click here</span>, and click
+                            the big Download button.
+                            If your browser
+                            blocks the download or flags it as a virus, follow the steps shown in the video below. Run
+                            the installer and wait for it to complete. Once
+                            installed, search for "Latite Injector" in your Start menu.
                             <br><br>
                             <strong>Method 2:</strong><br>
-                            If method 1 does not work, you can instead download the DLL from <code>#download</code> and
+                            If Method 1 doesn't work, you can manually download the Latite DLL from the
+                            <code>"Other Download Options"</code> dropdown in the <span class="dlfaq">download
+                                menu</span>.
+                            and
                             use
                             an external
                             injector to inject the Latite DLL instead. You can use the <a class="links"
@@ -375,9 +394,18 @@
                     </button>
                     <div id="faqp">
                         <ul class="faqlist">
-                            <li><a href="https://github.com/Imrglop/Latite-Releases/raw/main/injector/Installer.exe" class="links" target="_blank"><strong>Latite Injector</strong></a> - this is the option most people choose, it's the default way to inject the client.</li>
-                            <li><a href="https://latite-client.is-from.space/r/Latite_Minimal.exe" class="links" target="_blank"><strong>Latite Minimal</strong></a> - This is a simpler version of the main injector for users encountering antivirus issues or users in India as GitHub is blocked in that country and therefore only this version of the injector will work for them.</li>
-                            <li><a href="https://github.com/Imrglop/Latite-Releases/releases/latest" class="links" target="_blank"><strong>DLL Download</strong></a> - This is the client itself, only download this if you want to use it with other injectors (no you will not be able to use the client by opening the DLL itself)</li>
+                            <li><a href="https://github.com/Imrglop/Latite-Releases/raw/main/injector/Installer.exe"
+                                    class="links" target="_blank"><strong>Latite Injector</strong></a> - this is the
+                                option most people choose, it's the default way to inject the client.</li>
+                            <li><a href="https://latite-client.is-from.space/r/Latite_Minimal.exe" class="links"
+                                    target="_blank"><strong>Latite Minimal</strong></a> - This is a simpler version of
+                                the main injector for users encountering antivirus issues or users in India as GitHub is
+                                blocked in that country and therefore only this version of the injector will work for
+                                them.</li>
+                            <li><a href="https://github.com/Imrglop/Latite-Releases/releases/latest" class="links"
+                                    target="_blank"><strong>DLL Download</strong></a> - This is the client itself, only
+                                download this if you want to use it with other injectors (no you will not be able to use
+                                the client by opening the DLL itself)</li>
                         </ul>
                         <!-- <img src="./sources/faq-help-dl.webp" alt="Latite Client Bot Discord Message" loading="lazy"
                             class="faq-help-dl"> -->
@@ -449,8 +477,9 @@
                             anything you read here. If you don't trust it, don't run it, internet safety 101.
                             <br><br>
                             <i>(Thanks Eclipse [1unar_eclipse] for the in-depth explanation)</i>
+                            <br>
                         </p>
-                        <br><br>
+                        <br>
                         <strong>What you can do about it:</strong>
                         <ul class="faqlist">
                             <li>Exclude Latite from your antivirus</li>
@@ -494,15 +523,15 @@
                             </li>
                             <li>
                                 The game version you're on is outdated/unsupported (see supported versions in
-                                <strong>FAQ #7</strong>).
+                                <strong>FAQ #9</strong>).
                             </li>
-                            <li>
+                            <!-- <li>
                                 You selected the wrong version of the client in the injector
                                 <strong>(THIS IS NOT A VERSION SWITCHER, PLEASE SELECT THE VERSION YOUR GAME IS
                                     ON)</strong>,
                                 which in that case an error message will be shown (if you're on an outdated
                                 version of the injector and inject the wrong version the game will just crash).
-                            </li>
+                            </li> -->
                             <br>
                         </ul>
                         You can also try resetting your config (refer to <strong>FAQ #7</strong>).
@@ -515,7 +544,8 @@
                         <i class="fas fa-chevron-down d-arrow"></i>
                     </button>
                     <div id="faqp">
-                        First, check if the version you selected is the same as your Minecraft version, if it isn't, and
+                        First, check if Latite Client supports your Minecraft version <strong>(FAQ #9)</strong>, if it
+                        isn't, and
                         your current Minecraft version isn't supported by Latite, you can upgrade/downgrade your game
                         via <a href="https://github.com/MCMrARM/mc-w10-version-launcher" class="links"
                             target="_blank">MCMrARM's Version Switcher&nbsp;<i
@@ -593,8 +623,9 @@
                     <div id="faqp">
                         The latest version of Latite Client currently supports:
                         <ul class="faqlist">
-                            <li>1.21.21</li>
-                            <li>1.21.20</li>
+                            <li>1.21.94</li>
+                            <li>1.21.93</li>
+                            <li>1.21.92</li>
                         </ul>
                     </div>
                 </div>
@@ -638,7 +669,8 @@
                         contains DLLs for Latite
                         Client not released to the public yet. For example, it could contain a version
                         of Latite Client that has some features that aren't released to the public yet. -->
-                        Latite Client Beta are early versions of the client to test new features. These versions may be unstable
+                        Latite Client Beta are early versions of the client to test new features. These versions may be
+                        unstable
                         and bugs can be encountered.
                         <br><br>
                         Beta versions are now available to everyone since the client's transition to FOSS, and can
@@ -647,7 +679,8 @@
                         Boosting our discord server or subscribing to <a href="https://www.patreon.com/latiteclient"
                             class="links">our patreon&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a>,
                         will give you access to the beta chat. Let us know that you are testing beta releases and want
-                        to join beta chat. You can do this by making a ticket at <code>#open-a-ticket</code> or just pinging a staff member.
+                        to join beta chat. You can do this by making a ticket at <code>#open-a-ticket</code> or just
+                        pinging a staff member.
                     </div>
                 </div>
 
@@ -721,18 +754,22 @@
                         <br>
                         <ul class="faqlist">
                             <li>Armor HUD</li>
+                            <li>Auto GG</li>
                             <li>Behind You (Snaplook)</li>
+                            <li>Block Game (Fun)</li>
                             <li>Block Overlay</li>
                             <li>Bow Indicator</li>
-                            <li>Break Progress</li>
+                            <li>Break Indicator</li>
                             <li>CPS Counter</li>
                             <li>Chunk Borders</li>
                             <li>Cinematic Camera</li>
                             <li>Clock</li>
                             <li>Combo Counter</li>
                             <li>Command Shortcuts</li>
+                            <li>Custom Coordinates</li>
                             <li>Environment Changer</li>
                             <li>FPS Counter</li>
+                            <li>Frame Time Display</li>
                             <li>Freelook</li>
                             <li>Fullbright</li>
                             <li>GUI Scale Changer</li>
@@ -748,6 +785,7 @@
                             <li>Movable Paperdoll</li>
                             <li>Movable Scoreboard</li>
                             <li>Nickname</li>
+                            <li>No Hurt Cam</li>
                             <li>Ping Display</li>
                             <li>Player List</li>
                             <li>Position Display (displays your coordinates)</li>
@@ -755,12 +793,12 @@
                             <li>Server Display (displays the IP address of the server you're on)</li>
                             <li>Speed display</li>
                             <li>Text/Command Hotkey</li>
-                            <li>Third person nametag</li>
+                            <li>Third Person Nametag</li>
                             <li>Toggle Sprint/Sneak</li>
                             <li>Zoom</li>
                         </ul>
                         <br>
-                        37 Total Mods
+                        42 Total Core Mods, and many more commmunity-made plugins!
                     </div>
                 </div>
 
@@ -795,6 +833,7 @@
                         <strong>HIVE</strong>
                         <ul class="faqlist">
                             <li>Freelook</li>
+                            <li>NoHurtCam</li>
                         </ul>
                         <br>
                         <strong>GALAXITE</strong>
@@ -907,11 +946,21 @@
                     <div id="faqp">
                         Here are all the GitHub Links:
                         <ul class="faqlist">
-                            <li><a href="https://github.com/LatiteClient/Latite" class="links" target="_blank">Latite Client V2 Repository&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
-                            <li><a href="https://github.com/Plextora/LatiteInjector" class="links" target="_blank">Latite Client Launcher&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
-                            <li><a href="https://github.com/LatiteScripting" class="links" target="_blank">Latite Client Plugins Repositories&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
-                            <li><a href="https://github.com/Imrglop/Latite-Releases" class="links" target="_blank">Latite Client Releases&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
-                            <li><a href="https://github.com/LatiteClient/latiteclient.github.io" class="links" target="_blank">Latite Client Website&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                            <li><a href="https://github.com/LatiteClient/Latite" class="links" target="_blank">Latite
+                                    Client V2 Repository&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </li>
+                            <li><a href="https://github.com/Plextora/LatiteInjector" class="links"
+                                    target="_blank">Latite Client Launcher&nbsp;<i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                            <li><a href="https://github.com/LatiteScripting" class="links" target="_blank">Latite Client
+                                    Plugins Repositories&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </li>
+                            <li><a href="https://github.com/Imrglop/Latite-Releases" class="links"
+                                    target="_blank">Latite Client Releases&nbsp;<i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                            <li><a href="https://github.com/LatiteClient/latiteclient.github.io" class="links"
+                                    target="_blank">Latite Client Website&nbsp;<i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -924,12 +973,14 @@
                     <div id="faqp">
                         Here are all the Latite Social Medias:
                         <ul class="faqlist">
-                            <li>X (formerly Twitter): <a href="https://x.com/@LatiteClient" class="links">@Latite
+                            <li>X (formerly Twitter): <a href="https://x.com/@LatiteClient" class="links"
+                                    target="_blank">@Latite
                                     Client</a></li>
-                            <li>Discord: <a href="https://discord.gg/GpV3w5tyBs" class="links">discord.gg/latite</a>
+                            <li>Discord: <a href="https://latite.net/discord" class="links"
+                                    target="_blank">latite.net/discord</a>
                             </li>
-                            <li>YouTube: <a href="https://www.youtube.com/@LatiteClientMC"
-                                    class="links">@LatiteClientMC</a></li>
+                            <li>YouTube: <a href="https://www.youtube.com/@LatiteClientMC" class="links"
+                                    target="_blank">@LatiteClientMC</a></li>
                         </ul>
                         <br>
                         Any accounts not including in this list claiming to be Latite Client are
@@ -959,33 +1010,38 @@
                     <div id="faqp">
                         <p>
                             <strong>Method 1:</strong><br>
-                            <ul class="faqlist">
-                                <li>Launch Minecraft</li>
-                                <li>Make sure you have Latite Client injected</li>
-                                <li>Go to the official Latite Client <a class="links" href="./plugins/" target="_blank">Plugins List&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
-                                <li>Find any plugin you wish to install</li>
-                                <li>Type <code>.plugin install [plugin name]</code> in Minecraft chat</li>
-                                <li>Type <code>.plugin load [plugin name]</code> in Minecraft chat</li>
-                                <li>You have now installed a Latite Client plugin! You may head over to the plugins tab in the mod menu to view your list of installed plugins</li>
-                            </ul>
-                            <br><br>
-                            <strong>Method 2:</strong><br>
-                            If you have a plugin that is not on the official Latite Client plugins list, follow the steps below. Use
-                            these external plugins at your own risk as they are not verified!
-                            <ul class="faqlist">
-                                <li>If zipped, extract the contents, making sure the files are in the folder</li>
-                                <li>Copy the folder by clicking it once and pressing <code>CTRL + C</code></li>
-                                <li>Press <code>Windows Key + R</code> and paste<br><code>%localappdata%\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\LatiteRecode\Plugins</code></li>
-                                <li>Hit Enter</li>
-                                <li>Paste the folder in there</li>
-                                <li>Launch Latite Client and enter a world</li>
-                                <li>Head over to the plugins tab in the mod menu and find the plugin</li>
-                                <li>If you don't see the plugin, type <code>.plugin load [plugin folder name]</code></li>
-                            </ul>
+                        <ul class="faqlist">
+                            <li>Launch Minecraft</li>
+                            <li>Make sure you have Latite Client injected</li>
+                            <li>Go to the official Latite Client <a class="links" href="./plugins/"
+                                    target="_blank">Plugins List&nbsp;<i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                            <li>Find any plugin you wish to install and click the big blue download button. Latite Client will automatically install the plugin.</li>
+                            <li>Type <code>.plugin load [plugin name]</code> in Minecraft chat</li>
+                            <li>You have now installed a Latite Client plugin! You may head over to the plugins tab in
+                                the mod menu to view your list of installed plugins</li>
+                        </ul>
+                        <br>
+                        <strong>Method 2:</strong><br>
+                        If you have a plugin that is not on the official Latite Client plugins list, follow the steps
+                        below. Use
+                        these external plugins at your own risk as they are not verified!
+                        <ul class="faqlist">
+                            <li>If zipped, extract the contents, making sure the files are in the folder</li>
+                            <li>Copy the folder by clicking it once and pressing <code>CTRL + C</code></li>
+                            <li>Press <code>Windows Key + R</code> and
+                                paste<br><code>%localappdata%\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\RoamingState\LatiteRecode\Plugins</code>
+                            </li>
+                            <li>Hit Enter</li>
+                            <li>Paste the folder in there</li>
+                            <li>Launch Latite Client and enter a world</li>
+                            <li>Head over to the plugins tab in the mod menu and find the plugin</li>
+                            <li>If you don't see the plugin, type <code>.plugin load [plugin folder name]</code></li>
+                        </ul>
                         </p>
                     </div>
                 </div>
-                
+
                 <div class="question">
                     <button class="faqbutton">
                         <span><strong>3. </strong>I want to make a plugin!</span>
@@ -994,8 +1050,10 @@
                     <div id="faqp">
                         Links to help you:
                         <ul class="faqlist">
-                            <li><a class="links" href="https://latitescripting.github.io" target="_blank">Documentation</a></li>
-                            <li><a class="links" href="https://github.com/LatiteScripting/" target="_blank">GitHub Repository</a></li>
+                            <li><a class="links" href="https://latitescripting.github.io"
+                                    target="_blank">Documentation</a></li>
+                            <li><a class="links" href="https://github.com/LatiteScripting/" target="_blank">GitHub
+                                    Repository</a></li>
                         </ul>
                     </div>
                 </div>
@@ -1145,35 +1203,36 @@
     <div class="overlay-container license" onclick="closeLicense()">
         <div class="overlay-box license">
             <div class="overlay-header license">
-                <p>Latite Products License</p>
+                <p>Latite Branding License</p>
                 <i class="bi bi-x-lg" onclick="closeLicense()"></i>
             </div>
             <div class="overlay-content license">
                 <p class="ltext">
-                    By using the Client name, logo, or any of our files, you agree to these terms:
+                    Copyright (c) latite.net 2025. All rights reserved.
+                    <br><br>
+                    By using the Latite Logo, you agree to these terms:
                     <br><br>
                     You are <span><strong>allowed</strong></span> to:
                     <br><br>
-                    - Use the Latite name and logo in a showcase, such as a YouTube video.
-                    <br>
-                    - Modify the injector for personal use.
-                    <br>
-                    - Contribute to the injector's source by opening a PR/Forking the launcher.
+                    - Use the Latite Logo in a showcase, such as a YouTube video.
                     <br><br>
                     You are <span><strong>not allowed</strong></span> to:
                     <br><br>
-                    - Distribute, redistribute or sell any of our files in any form of media. (this only includes our
-                    files that we made. we are not affiliated with Microsoft or Mojang).
+                    - Distribute, redistribute or sell any of our copyrighted content.
                     <br>
-                    - Distribute, redistribute, or sell a modified version of the injector in any form of media.
-                    <br>
-                    - Use the Latite name as a Client in any form of media, as if it's an official Client server, or
-                    claiming to be official.
+                    - Use the Latite Logo in an unofficial context claiming to be official.
                     <br><br><br>
                     <span><strong>If you do not comply with the above terms, we will work to take your content
                             down.</strong></span>
                 </p>
+                <br><br>
             </div>
+            <div class="overlay-header license">
+                <p>Latite Products License</p>
+            </div>
+            <p class="ltext">Latite Client's code is licensed under the <span><strong><a
+                            href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank">GNU GPLv3 license.</a></strong></span>
+            </p>
         </div>
     </div>
 

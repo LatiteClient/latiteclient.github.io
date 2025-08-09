@@ -1,17 +1,18 @@
-# Latite Products License
+# Latite Branding License
+Copyright (c) latite.net 2025. All rights reserved.
 
-By using the Client name, logo, or any of our files, you agree to these terms:
+By using the Latite Logo, you agree to these terms:
 
 You are ***allowed*** to:
 
-- Use the Latite name and logo in a showcase, such as a YouTube video.
-- Modify the injector for personal use.
-- Contribute to the injector's source by opening a PR/Forking the launcher.
+- Use the Latite Logo in a showcase, such as a YouTube video.
 
 You are ***not allowed*** to:
 
-- Distribute, redistribute or sell any of our files in any form of media. (this only includes our files that we made. we are not affiliated with Microsoft or Mojang).
-- Distribute, redistribute, or sell a modified version of the injector in any form of media.
-- Use the Latite name as a Client in any form of media, as if it's an official Client server, or claiming to be official.
+- Distribute, redistribute or sell any of our copyrighted content.
+- Use the Latite Logo in an unofficial context claiming to be official.
 
 *If you do not comply with the above terms, we will work to take your content down.*
+
+# Latite Products License
+Latite Client's code is licensed under the [GNU GPLv3 license](https://www.gnu.org/licenses/gpl-3.0.en.html).

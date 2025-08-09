@@ -1703,6 +1703,11 @@ p.disclaimer span.disclaimer-btn,
     padding: 0px 40px;
 }
 
+.dlfaq {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .plugin-faq-header {
     font-weight: 400;
     font-size: 30px;
@@ -1966,6 +1971,11 @@ code {
 
 .ltext {
     color: #fff;
+}
+
+.ltext span strong a {
+    font-weight: 600;
+    color: #d7ba7d;
 }
 
 .ltext span {
