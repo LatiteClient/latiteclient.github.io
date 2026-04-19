@@ -26,17 +26,17 @@ overlayContainers.forEach(function (overlayContainer) {
 });
 
 
-var pluginItems = document.querySelectorAll(".plugin-item");
-pluginItems.forEach((pluginItem) => {
-	pluginItem.querySelector(".plugin-link").addEventListener("click", function () {
-		if (confirm("The simple method of installing this plugin is typing '.plugin install [plugin name]' in Minecraft chat, followed by another command, '.plugin load [plugin name]'. If you would like to download the ZIP file instead, Click OK.")) {
-			var pluginItems = document.querySelectorAll(".plugin-item");
-			pluginItems.forEach((pluginItem) => {
-				pluginItem.addEventListener('click', handlePluginItemClick);
-			});
-		}
-	});
-})
+// var pluginItems = document.querySelectorAll(".plugin-item");
+// pluginItems.forEach((pluginItem) => {
+// 	pluginItem.querySelector(".plugin-link").addEventListener("click", function () {
+// 		if (confirm("The simple method of installing this plugin is typing '.plugin install [plugin name]' in Minecraft chat, followed by another command, '.plugin load [plugin name]'. If you would like to download the ZIP file instead, Click OK.")) {
+// 			var pluginItems = document.querySelectorAll(".plugin-item");
+// 			pluginItems.forEach((pluginItem) => {
+// 				pluginItem.addEventListener('click', handlePluginItemClick);
+// 			});
+// 		}
+// 	});
+// })
 
 function handlePluginItemClick() {
 	var link = this.querySelector(".plugin-link").getAttribute("value");
