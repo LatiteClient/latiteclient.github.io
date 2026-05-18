@@ -348,13 +348,13 @@
                     <div id="faqp">
                         <p>
                             <strong>Method 1:</strong><br>
-                            Download the Latite Injector Installer from the top of this page or <span class="dlfaq"
+                            Download the Latite Launcher Installer from the top of this page or <span class="dlfaq"
                                 onclick="toggleAlertDownlaodButton(); toggleDownload();">click here</span>, and click
                             the big Download button.
                             If your browser
                             blocks the download or flags it as a virus, follow the steps shown in the video below. Run
                             the installer and wait for it to complete. Once
-                            installed, search for "Latite Injector" in your Start menu.
+                            installed, search for "Latite Client Launcher" in your Start menu.
                             <br><br>
                             <strong>Method 2:</strong><br>
                             If Method 1 doesn't work, you can manually download the Latite DLL from the
@@ -390,15 +390,10 @@
                     </button>
                     <div id="faqp">
                         <ul class="faqlist">
-                            <li><a href="https://github.com/Imrglop/Latite-Releases/raw/main/injector/Installer.exe"
-                                    class="links" target="_blank"><strong>Latite Injector</strong></a> - this is the
-                                option most people choose, it's the default way to inject the client.</li>
-                            <li><a href="https://latite-client.is-from.space/r/Latite_Minimal.exe" class="links"
-                                    target="_blank"><strong>Latite Minimal</strong></a> - This is a simpler version of
-                                the main injector for users encountering antivirus issues or users in India as GitHub is
-                                blocked in that country and therefore only this version of the injector will work for
-                                them.</li>
-                            <li><a href="https://github.com/Imrglop/Latite-Releases/releases/latest" class="links"
+                            <li><a href="https://github.com/LatiteClient/Launcher/releases/latest/download/Latite.Client.Launcher_x64-setup.exe"
+                                    class="links" target="_blank"><strong>Latite Launcher</strong></a> - this is the
+                                option most people choose, it's the default way to launch the client.</li>
+                            <li><a href="https://github.com/LatiteClient/Latite/releases/latest" class="links"
                                     target="_blank"><strong>DLL Download</strong></a> - This is the client itself, only
                                 download this if you want to use it with other injectors (no you will not be able to use
                                 the client by opening the DLL itself)</li>
@@ -410,7 +405,7 @@
 
                 <div class="question">
                     <button class="faqbutton">
-                        <span><strong>4. </strong>Why does Latite's Injector get flagged as a virus?</span>
+                        <span><strong>4. </strong>Why does Latite's Launcher get flagged as a virus?</span>
                         <i class="fas fa-chevron-down d-arrow"></i>
                     </button>
                     <div id="faqp">
@@ -446,12 +441,12 @@
                             with anything that can be a meaningful virus. Worst-case scenario is your computer freezing
                             lol.
                             <br><br>
-                            So why is Latite's injector - and only Latite's injector - detected? It's primarily because
+                            So why is Latite's launcher - and only Latite's launcher - detected? It's primarily because
                             it's written in C#. C# as a language is very easy to reverse engineer and decompile, and I
                             wouldn't be shocked if antiviruses have a partial decompiler to check programs written in
                             it. Onix's launcher, as another example, is written in C++, which is a lot harder to do this
                             to, so it's detected less by default. Another reason is a whitelist system in place by
-                            Microsoft, but that's a lot easier to understand; IIRC the stable injector has been
+                            Microsoft, but that's a lot easier to understand; IIRC the stable launcher has been
                             submitted for approval but the process is very slow. Onix's launcher has been submitted for
                             this, so on top of being harder for antiviruses to crack, it also has Windows saying "yeah,
                             this is fine." But back to Latite, since it's easy to see "under the hood" in C#, that means
@@ -460,10 +455,10 @@
                             said above, this is completely fine in this case. Pattern recognition can and will go wrong
                             at some point. Something something Among Us fire alarms.
                             <br><br>
-                            I should add: all of this is SPECIFICALLY on the injector. I can say with certainty that,
+                            I should add: all of this is SPECIFICALLY on the launcher. I can say with certainty that,
                             after injection, the DLL itself has no reason to send or receive anything to or from the
                             internet. You can use another DLL injector if you want to; plenty of those don't have issues
-                            like Latite's has. In fact, if I remember right, you could probably use Onix's injector and
+                            like Latite's launcher has. In fact, if I remember right, you could probably use Onix's injector and
                             have the same one-click convenience factor after a bit of setup. Don't quote me on that
                             though.
                             <br><br>
@@ -479,10 +474,9 @@
                         <strong>What you can do about it:</strong>
                         <ul class="faqlist">
                             <li>Exclude Latite from your antivirus</li>
-                            <li>Download the Legacy Latite Injector or Latite Minimal and use it.</li>
                             <li>Use a different injector and inject Latite manually</li>
-                            <li>View the injector's source code at <a class="links"
-                                    href="https://github.com/Plextora/LatiteInjector" target="_blank">here&nbsp;<i
+                            <li>View the launcher's source code at <a class="links"
+                                    href="https://github.com/LatiteClient/Launcher" target="_blank">here&nbsp;<i
                                         class="fa-solid fa-arrow-up-right-from-square"></i></a> (and even build it
                                 yourself)
                             </li>
@@ -498,14 +492,14 @@
 
                 <div class="question">
                     <button class="faqbutton">
-                        <span><strong>5. </strong>Latite Client isn't working/injecting!</span>
+                        <span><strong>5. </strong>Latite Client isn't working/launching!</span>
                         <i class="fas fa-chevron-down d-arrow"></i>
                     </button>
                     <div id="faqp">
-                        If you're having problems injecting Latite Client, try installing
+                        If you're having problems launching Latite Client, try installing
                         <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe" class="links" target="_blank">Microsoft
                             Visual C++ Redistributable&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a>.
-                        If it's still not working, try using Latite Minimal or try using an external injector with the
+                        If it's still not working, try using an external injector with the
                         Latite DLL (refer to <strong>Method 2</strong> in <strong>FAQ #2</strong>). This problem could
                         also be caused by your antivirus, like Windows
                         Security.
@@ -946,13 +940,13 @@
                             <li><a href="https://github.com/LatiteClient/Latite" class="links" target="_blank">Latite
                                     Client V2 Repository&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             </li>
-                            <li><a href="https://github.com/Plextora/LatiteInjector" class="links"
+                            <li><a href="https://github.com/LatiteClient/Launcher" class="links"
                                     target="_blank">Latite Client Launcher&nbsp;<i
                                         class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
                             <li><a href="https://github.com/LatiteScripting" class="links" target="_blank">Latite Client
                                     Plugins Repositories&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             </li>
-                            <li><a href="https://github.com/Imrglop/Latite-Releases" class="links"
+                            <li><a href="https://github.com/LatiteClient/Latite/releases/latest" class="links"
                                     target="_blank">Latite Client Releases&nbsp;<i
                                         class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
                             <li><a href="https://github.com/LatiteClient/latiteclient.github.io" class="links"
@@ -1119,7 +1113,7 @@
                     <img class="dlgradient" src="./sources/dlgradient.png">
                     <h2><span><img src="./sources/latite.webp"></span>Latite Launcher</h2>
                     <p>Click below to download Latite's Official Launcher!</p>
-                    <a href="https://github.com/Imrglop/Latite-Releases/raw/main/injector/Installer.exe"
+                    <a href="https://github.com/LatiteClient/Launcher/releases/latest/download/Latite.Client.Launcher_x64-setup.exe"
                         target="_blank"><button class="latite-dl">Download</button></a>
                 </div>
                 <!-- <div class="line"></div> -->
@@ -1162,7 +1156,7 @@
                             </li> -->
                             <li>
                                 <a class="links" target="_blank"
-                                    href="https://github.com/Imrglop/Latite-Releases/releases/latest">
+                                    href="https://github.com/LatiteClient/Latite/releases/latest">
                                     <strong>DLL Download</strong>&nbsp;<i
                                         class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
@@ -1173,7 +1167,7 @@
                             <li>
 
                                 <a class="links" target="_blank"
-                                    href="jiayi://addmod/https://github.com/Imrglop/Latite-Releases/releases/latest/download/Latite.dll">
+                                    href="jiayi://addmod/https://github.com/LatiteClient/Latite/releases/latest/download/Latite.dll">
                                     <strong>Jiayi Launcher Import</strong>&nbsp;<i
                                         class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
